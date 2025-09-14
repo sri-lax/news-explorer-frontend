@@ -1,0 +1,21 @@
+.about {
+  display: flex;
+  padding: 14px 41px 63px;
+}
+.about-author {
+  height: 46px;
+  font-size: 40px;
+  color: rgba(26, 27, 34, 1);
+  line-height: 46px;
+  padding-left: 40px;
+}
+.author__text {
+  margin: 40px;
+}
+.author__description {
+  font-size: 18px;
+  color: rgba(26, 27, 34, 1);
+  line-height: 24px;
+  margin-bottom: -54px;
+  padding: 24px 45px;
+}

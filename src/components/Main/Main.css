@@ -1,0 +1,28 @@
+.cards {
+  padding: 85px;
+}
+.cards__title {
+  width: 712px;
+  height: 46px;
+  font-size: 40px;
+  padding: 70px 61px;
+  margin-bottom: -41px;
+}
+.cards__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  gap: 15px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.cards__show-more {
+  display: block;
+  margin: 24px auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+}
