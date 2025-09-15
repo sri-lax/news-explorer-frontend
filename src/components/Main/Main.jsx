@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import "./Main.css";
 import About from "../About/About";
 import NewsCard from "../NewsCard/NewsCard";

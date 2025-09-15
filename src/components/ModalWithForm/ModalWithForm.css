@@ -89,18 +89,17 @@
 }
 
 .modal__submit {
-  width: 124px;
-  height: 36px;
-  background-color: rgba(0, 0, 0, 1);
-  color: rgba(255, 255, 255, 1);
-  border-radius: 4px;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
   border: none;
-  gap: 8px;
-  padding: 8px 16px;
-  margin-top: 28px;
-}
-.modal__submit:hover {
-  opacity: 0.6;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: opacity 0.5s;
+  transition: background-color 0.3s ease;
+}
+
+.modal__submit:hover {
+  background-color: #155ab6;
 }
