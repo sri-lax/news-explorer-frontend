@@ -7,20 +7,21 @@ function NewsCard({ item, isSaved, onSave }) {
   });
   return (
     <li className="card">
-      <img
-        src={item.image}
-        alt={`Image for ${item.title}`}
-        className="cards__img"
-      />
-      <button
-        className={`card__save-btn ${isSaved ? "card__save-btn_saved" : ""}`}
-        onClick={() => onSave(item)}
-        aria-label={isSaved ? "Unsave article" : "Save article"}
-        title={isSaved ? "Remove from saved articles" : "Save this article"}
-      >
-        <img src={SaveBtn} alt="Save icon" className="card__save-icon" />
-        {isSaved ? "Saved" : ""}
-      </button>
+      <div className="card__image-wrapper">
+        <img
+          src={item.image}
+          alt={`Image for ${item.title}`}
+          className="cards__img"
+        />
+        <button
+          className={`card__save-btn ${isSaved ? "card__save-btn_saved" : ""}`}
+          onClick={() => onSave(item)}
+          aria-label={isSaved ? "Unsave article" : "Save article"}
+          title={isSaved ? "Remove from saved articles" : "Save this article"}
+        >
+          <img src={SaveBtn} alt="Save icon" className="card__save-icon" />
+        </button>
+      </div>
 
       <div className="card__content">
         <p className="card__date">{currentDate}</p>

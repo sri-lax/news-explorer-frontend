@@ -11,10 +11,19 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 function App() {
   const [articleData, setArticleData] = useState({ type: " " });
   const [activeModal, setActiveModal] = useState("");
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
+  const handleSaveArticle = (article) => {
+    setSavedArticles((prev) => {
+      const alreadySaved = prev.find((a) => a._id === article._id);
+      return alreadySaved
+        ? prev.filter((a) => a._id !== article._id) // Unsave
+        : [...prev, article]; // Save
+    });
+  };
 
   return (
     <div className="page">
@@ -25,10 +34,14 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<></>} />
-          <Route path="/" element={<></>} />
+          <Route path="/home" element={<></>} />
         </Routes>
         <SearchForm onSearch={setArticleData} />
-        <Main articleData={articleData} />
+        <Main
+          articleData={articleData}
+          savedArticles={savedArticles}
+          onSaveArticle={handleSaveArticle}
+        />
       </div>
       <LoginModal
         isOpen={activeModal === "header__signin"}

@@ -5,7 +5,7 @@ import NewsCard from "../NewsCard/NewsCard";
 <button className="news__show-more">Show more</button>;
 import { defaultArticles } from "../../utils/constants.js";
 
-function Main({ articleData }) {
+function Main({ articleData, savedArticles, onSaveArticle }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const filteredArticles = defaultArticles.filter(
@@ -23,10 +23,21 @@ function Main({ articleData }) {
           <>
             <h2 className="cards__title">Search results</h2>
             <ul className="cards__list">
-              {filteredArticles.slice(0, visibleCount).map((item) => (
-                <NewsCard key={item._id} item={item} />
-              ))}
+              {filteredArticles.slice(0, visibleCount).map((item) => {
+                const isSaved = savedArticles.some((a) => a._id === item._id);
+                console.log("Rendering card:", item._id, "Saved:", isSaved); // 👈 Debug log
+
+                return (
+                  <NewsCard
+                    key={item._id}
+                    item={item}
+                    isSaved={isSaved}
+                    onSave={onSaveArticle}
+                  />
+                );
+              })}
             </ul>
+
             {visibleCount < filteredArticles.length && (
               <div className="show-more-wrapper">
                 <button className="cards__show-more" onClick={handleShowMore}>

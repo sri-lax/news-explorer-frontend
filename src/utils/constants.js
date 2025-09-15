@@ -41,7 +41,7 @@ const defaultArticles = [
   },
   {
     _id: 5,
-    title: "Everyone Needs a Special 'Sit spot' in Nature",
+    title: "Everyone Needs a Special 'Sit spot' ",
     name: "Nature",
     image:
       "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -49,7 +49,7 @@ const defaultArticles = [
   },
   {
     _id: 6,
-    title: "Everyone Needs a Special 'Sit spot' in Nature",
+    title: "Everyone N",
     name: "Nature",
     image:
       "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -57,7 +57,7 @@ const defaultArticles = [
   },
   {
     _id: 7,
-    title: "Everyone Needs a Special 'Sit spot' in Nature",
+    title: "Everyone Needs a Special 'S",
     name: "Nature",
     image:
       "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -65,7 +65,7 @@ const defaultArticles = [
   },
   {
     _id: 8,
-    title: "Everyone Needs a Special 'Sit spot' in Nature",
+    title: " 'Sit spot' in Natures",
     name: "Nature",
     image:
       "https://images.unsplash.com/photo-1504893524553-b855bce32c67?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -73,7 +73,7 @@ const defaultArticles = [
   },
   {
     _id: 9,
-    title: "Everyone Needs a Special 'Sit spot' in Nature",
+    title: " a Special 'Sit spot' in Nature",
     name: "Nature",
     image:
       "https://images.unsplash.com/photo-1491147334573-44cbb4602074?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

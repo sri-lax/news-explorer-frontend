@@ -10,6 +10,12 @@
   margin: 16px;
   transition: transform 0.2s ease;
 }
+.card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
 .cards__img {
   width: 100%;
@@ -33,11 +39,27 @@
 
 .card__save-btn {
   position: absolute;
-  right: 113px;
-  bottom: 220px;
+  top: 16px;
+  right: 16px;
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 1);
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+.card__save-icon {
+  width: 14px;
+  height: 19px;
+  padding: 12px;
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.card__save-btn_saved .card__save-icon {
+  opacity: 1;
 }
