@@ -1,0 +1,115 @@
+.saved-articles {
+  padding: 40px 80px;
+  background-color: #ffffff;
+}
+
+.saved-articles__header {
+  margin-bottom: 32px;
+}
+
+.saved-articles__title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.saved-articles__subtitle {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 16px;
+}
+
+/* Grid layout */
+.saved-articles__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card styling */
+.saved-articles__card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.saved-articles__card:hover {
+  transform: translateY(-4px);
+}
+
+/* Header with tag and delete button */
+.saved-articles__card-header {
+  position: relative;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saved-articles__tag {
+  background-color: #ffcc00;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #000000;
+}
+
+.saved-articles__delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Body with image and content */
+.saved-articles__card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-articles__card-body img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.saved-articles__content {
+  padding: 16px;
+}
+
+.saved-articles__date {
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.saved-articles__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+  color: #222222;
+}
+
+.saved-articles__excerpt {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+.saved-articles__source {
+  font-size: 12px;
+  color: #555555;
+}

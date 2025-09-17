@@ -5,6 +5,21 @@
   border-bottom: 1px solid #ddd;
 }
 
+/* Default styles for main page */
+.header__news-title,
+.header__home-btn,
+.header__signin {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Override styles for saved-news page */
+.header_type_saved-news .header__news-title,
+.header_type_saved-news .header__home-btn,
+.header_type_saved-news .header__signin {
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
 .header__title {
   font-size: 20px;
   color: rgba(255, 255, 255, 1);

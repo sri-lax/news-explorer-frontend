@@ -10,3 +10,8 @@
 .page__content {
   margin: 0 auto;
 }
+.page__no-bg {
+  background-image: none;
+  background-color: #ffffff;
+  color: #000000 !important;
+}
