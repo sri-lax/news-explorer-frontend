@@ -1,9 +1,10 @@
 import "./NewsCard.css";
 import SaveBtn from "../../assets/saveBtn.svg";
-function NewsCard({ item, isSaved, onSave }) {
+function NewsCard({ item, isSaved, onToggleSave }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
+    year: "numeric",
   });
   return (
     <li className="card">
@@ -15,9 +16,10 @@ function NewsCard({ item, isSaved, onSave }) {
         />
         <button
           className={`card__save-btn ${isSaved ? "card__save-btn_saved" : ""}`}
-          onClick={() => onSave(item)}
-          aria-label={isSaved ? "Unsave article" : "Save article"}
-          title={isSaved ? "Remove from saved articles" : "Save this article"}
+          onClick={() => {
+            console.log("Toggle save clicked:", item);
+            onToggleSave(item);
+          }}
         >
           <img src={SaveBtn} alt="Save icon" className="card__save-icon" />
         </button>

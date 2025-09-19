@@ -13,6 +13,11 @@
   margin-bottom: 8px;
   color: #000000;
 }
+.saved-articles__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
 .saved-articles__subtitle {
   font-size: 16px;
@@ -112,4 +117,37 @@
 .saved-articles__source {
   font-size: 12px;
   color: #555555;
+}
+/* Ensure card is positioned relatively */
+.saved-articles__card {
+  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+/* Position delete icon in top-right corner */
+.saved-articles__card-header {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+/* Style the delete button */
+.saved-articles__delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Style the icon itself */
+.delete__icon {
+  width: 24px;
+  height: 24px;
 }

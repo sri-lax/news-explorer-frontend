@@ -5,7 +5,7 @@ import NewsCard from "../NewsCard/NewsCard";
 <button className="news__show-more">Show more</button>;
 import { defaultArticles } from "../../utils/constants.js";
 
-function Main({ articleData, savedArticles, onSaveArticle }) {
+function Main({ articleData, savedArticles, onToggleSaveArticle }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const filteredArticles = defaultArticles.filter(
@@ -25,14 +25,14 @@ function Main({ articleData, savedArticles, onSaveArticle }) {
             <ul className="cards__list">
               {filteredArticles.slice(0, visibleCount).map((item) => {
                 const isSaved = savedArticles.some((a) => a._id === item._id);
-                console.log("Rendering card:", item._id, "Saved:", isSaved); // 👈 Debug log
+                console.log("Rendering card:", item._id, "Saved:", isSaved);
 
                 return (
                   <NewsCard
                     key={item._id}
                     item={item}
                     isSaved={isSaved}
-                    onSave={onSaveArticle}
+                    onToggleSave={onToggleSaveArticle}
                   />
                 );
               })}

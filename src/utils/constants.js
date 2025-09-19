@@ -1,6 +1,6 @@
 const defaultArticles = [
   {
-    _id: 0,
+    _id: "1",
     title: "Everyone Needs a Special 'Sit spot' in Nature",
     name: "Technology",
     image:
@@ -8,7 +8,7 @@ const defaultArticles = [
     info: "Discover how spending quiet time in nature can improve mental clarity and well-being.",
   },
   {
-    _id: 1,
+    _id: "1",
     title: "Nature makes you better",
     name: "Nature",
     image:
@@ -16,7 +16,7 @@ const defaultArticles = [
     info: "Explore the science behind nature’s impact on your brain, body, and mood.",
   },
   {
-    _id: 2,
+    _id: "2",
     title: "Grand Teton Renews Historic Crest Trail",
     name: "National Parks",
     image:
@@ -24,7 +24,7 @@ const defaultArticles = [
     info: "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
   },
   {
-    _id: 3,
+    _id: "3",
     title: "Multnomah Falls",
     name: "Nature",
     image:
@@ -32,7 +32,7 @@ const defaultArticles = [
     info: "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
   },
   {
-    _id: 4,
+    _id: "4",
     title: "Grand Teton Renews Historic Crest Trail",
     name: "YOSEMITE National Parks",
     image:
@@ -40,7 +40,7 @@ const defaultArticles = [
     info: "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
   },
   {
-    _id: 5,
+    _id: "5",
     title: "Everyone Needs a Special 'Sit spot' ",
     name: "Nature",
     image:
@@ -48,7 +48,7 @@ const defaultArticles = [
     info: "Discover how spending quiet time in nature can improve mental clarity and well-being.",
   },
   {
-    _id: 6,
+    _id: "6",
     title: "Everyone N",
     name: "Nature",
     image:
@@ -56,7 +56,7 @@ const defaultArticles = [
     info: "Discover how spending quiet time in nature can improve mental clarity and well-being.",
   },
   {
-    _id: 7,
+    _id: "7",
     title: "Everyone Needs a Special 'S",
     name: "Nature",
     image:
@@ -64,7 +64,7 @@ const defaultArticles = [
     info: "Discover how spending quiet time in nature can improve mental clarity and well-being.",
   },
   {
-    _id: 8,
+    _id: "8",
     title: " 'Sit spot' in Natures",
     name: "Nature",
     image:
@@ -72,7 +72,7 @@ const defaultArticles = [
     info: "Discover how spending quiet time in nature can improve mental clarity and well-being.",
   },
   {
-    _id: 9,
+    _id: "9",
     title: " a Special 'Sit spot' in Nature",
     name: "Nature",
     image:
