@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { getSavedArticles, saveArticle, deleteArticle } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
+import {
+  getSavedArticles,
+  saveArticle,
+  deleteArticle,
+  loginUser,
+  registerUser,
+} from "../../utils/api";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -17,6 +24,7 @@ function App() {
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const location = useLocation();
+  const [currentUser, setCurrentUser] = useState(null);
   const isSavedPage = location.pathname === "/saved-news";
   useEffect(() => {
     getSavedArticles()
@@ -31,6 +39,7 @@ function App() {
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
+  const navigate = useNavigate();
   const handleToggleSaveArticle = (article) => {
     const match = savedArticles.find((a) => a._id === article._id);
 
@@ -103,6 +112,7 @@ function App() {
                   savedArticles={savedArticles}
                   isLoaded={isLoaded}
                   onDeleteArticle={handleDeleteArticle}
+                  username={currentUser?.username}
                 />
               }
             />
@@ -113,7 +123,14 @@ function App() {
         isOpen={activeModal === "header__signin"}
         onClose={closeActiveModal}
         onLogin={(credentials) => {
-          console.log("Logging in with:", credentials);
+          loginUser(credentials)
+            .then((user) => {
+              console.log("Logged in:", user);
+              setCurrentUser(user);
+              closeActiveModal();
+              navigate("/saved-news");
+            })
+            .catch(() => alert("Login failed"));
         }}
         setActiveModal={setActiveModal}
       />
@@ -122,8 +139,16 @@ function App() {
         isOpen={activeModal === "register"}
         onClose={closeActiveModal}
         onRegister={(data) => {
-          console.log("Registering user:", data);
+          registerUser(data)
+            .then((user) => {
+              console.log("Registered:", user);
+              setCurrentUser(user);
+              closeActiveModal();
+              navigate("/saved-news");
+            })
+            .catch(() => alert("Registration failed"));
         }}
+        setActiveModal={setActiveModal}
       />
     </div>
   );

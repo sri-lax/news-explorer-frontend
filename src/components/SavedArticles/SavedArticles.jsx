@@ -1,7 +1,12 @@
 import deleteBtn from "../../assets/deleteBtn.svg";
 
 import "./SavedArticles.css";
-function SavedArticles({ savedArticles, isLoaded, onDeleteArticle }) {
+function SavedArticles({
+  savedArticles,
+  isLoaded,
+  onDeleteArticle,
+  userName = "Guest",
+}) {
   if (!isLoaded) {
     return <p>Loading saved articles...</p>;
   }
@@ -14,9 +19,9 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle }) {
     <main className="saved-articles">
       <section className="saved-articles__header">
         <h1 className="saved-articles__title">Saved articles</h1>
-        <p className="saved-articles__subtitle">Welcome, {username}</p>
+        <p className="saved-articles__subtitle">Welcome, {userName}</p>
         <h2 className="saved-articles__count">
-          {username}, you have {savedArticles.length} saved articles
+          {userName}, you have {savedArticles.length} saved articles
         </h2>
       </section>
 
