@@ -29,6 +29,26 @@
       "date": "September 19, 2025",
       "source": "News Explorer",
       "id": "9"
+    },
+    {
+      "_id": "5",
+      "title": "Everyone Needs a Special 'Sit spot' ",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "September 24, 2025",
+      "source": "News Explorer",
+      "id": "5"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "date": "September 24, 2025",
+      "source": "News Explorer",
+      "id": "3"
     }
   ],
   "users": [
@@ -39,10 +59,40 @@
       "username": "Elise"
     },
     {
-      "email": "asreelekshmi@yahoo.co.in",
+      "email": "elise@example.com",
       "password": "123",
-      "username": "sree",
-      "id": "v1IfWn7"
+      "userName": "Elise",
+      "id": "pTWIGia"
+    },
+    {
+      "email": "syamnavami@gmail.com",
+      "password": "321",
+      "userName": "Syam",
+      "id": "nBmANUF"
+    },
+    {
+      "email": "sreeanithakrishnan@yahoo.com",
+      "password": "123",
+      "userName": "KRISHNAN",
+      "id": "I5rnTwj"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "321",
+      "userName": "ABC",
+      "id": "5JP09Pd"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "098",
+      "userName": "sdf",
+      "id": "68L24kX"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "234",
+      "userName": "frfrf",
+      "id": "GazrrNu"
     }
   ]
 }

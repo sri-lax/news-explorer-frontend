@@ -38,19 +38,29 @@
 }
 
 .card__save-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
   background: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__warning {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
-
 .card__save-icon {
   width: 14px;
   height: 19px;
@@ -62,4 +72,28 @@
 
 .card__save-btn_saved .card__save-icon {
   opacity: 1;
+}
+.card__save-wrapper {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.card__save-warning {
+  top: 24px;
+  left: 149px;
+  opacity: 1;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }

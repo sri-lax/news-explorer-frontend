@@ -5,12 +5,20 @@ import NewsCard from "../NewsCard/NewsCard";
 <button className="news__show-more">Show more</button>;
 import { defaultArticles } from "../../utils/constants.js";
 
-function Main({ articleData, savedArticles, onToggleSaveArticle }) {
+function Main({
+  articleData,
+  savedArticles,
+  onToggleSaveArticle,
+  currentUser,
+}) {
   const [visibleCount, setVisibleCount] = useState(3);
 
-  const filteredArticles = defaultArticles.filter(
-    (item) => item.name.toLowerCase() === articleData.type.toLowerCase()
-  );
+  const filteredArticles =
+    articleData.type.trim() === ""
+      ? []
+      : defaultArticles.filter(
+          (item) => item.name.toLowerCase() === articleData.type.toLowerCase()
+        );
 
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 3);
@@ -33,6 +41,7 @@ function Main({ articleData, savedArticles, onToggleSaveArticle }) {
                     item={item}
                     isSaved={isSaved}
                     onToggleSave={onToggleSaveArticle}
+                    currentUser={currentUser}
                   />
                 );
               })}

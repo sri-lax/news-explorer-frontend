@@ -5,11 +5,11 @@ import "./RegisterModal.css";
 function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setName] = useState("");
+  const [userName, setName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({ email, password, username });
+    onRegister({ email, password, userName });
     onClose();
   };
 
@@ -51,11 +51,11 @@ function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
         />
       </label>
       <label className="modal__label">
-        Username
+        UserName
         <input
           type="text"
           className="modal__input"
-          value={username}
+          value={userName}
           onChange={(e) => setName(e.target.value)}
           required
         />

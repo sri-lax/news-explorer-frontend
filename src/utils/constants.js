@@ -1,6 +1,6 @@
 const defaultArticles = [
   {
-    _id: "1",
+    _id: "0",
     title: "Everyone Needs a Special 'Sit spot' in Nature",
     name: "Technology",
     image:

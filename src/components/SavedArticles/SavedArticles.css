@@ -25,7 +25,6 @@
   margin-bottom: 16px;
 }
 
-/* Grid layout */
 .saved-articles__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -35,7 +34,6 @@
   margin: 0;
 }
 
-/* Card styling */
 .saved-articles__card {
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -50,7 +48,6 @@
   transform: translateY(-4px);
 }
 
-/* Header with tag and delete button */
 .saved-articles__card-header {
   position: relative;
   padding: 16px;
@@ -79,7 +76,6 @@
   height: 20px;
 }
 
-/* Body with image and content */
 .saved-articles__card-body {
   display: flex;
   flex-direction: column;
@@ -118,7 +114,7 @@
   font-size: 12px;
   color: #555555;
 }
-/* Ensure card is positioned relatively */
+
 .saved-articles__card {
   position: relative;
   background-color: #f9f9f9;
@@ -130,7 +126,6 @@
   transition: transform 0.2s ease;
 }
 
-/* Position delete icon in top-right corner */
 .saved-articles__card-header {
   position: absolute;
   top: 16px;
@@ -138,7 +133,6 @@
   z-index: 2;
 }
 
-/* Style the delete button */
 .saved-articles__delete-btn {
   background: none;
   border: none;
@@ -146,7 +140,6 @@
   padding: 0;
 }
 
-/* Style the icon itself */
 .delete__icon {
   width: 24px;
   height: 24px;

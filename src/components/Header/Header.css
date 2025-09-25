@@ -5,17 +5,19 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* Default styles for main page */
 .header__news-title,
 .header__home-btn,
-.header__signin {
+.header__signin,
+.header__saved-btn,
+.header__username {
   color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
 }
 
-/* Override styles for saved-news page */
 .header_type_saved-news .header__news-title,
 .header_type_saved-news .header__home-btn,
-.header_type_saved-news .header__signin {
+.header_type_saved-news .header__saved-btn,
+.header_type_saved-news .header__username {
   color: #000000 !important;
   border-color: #000000 !important;
 }
@@ -54,4 +56,35 @@
 
 .header__user-menu:hover {
   color: #00bfff;
+}
+.header__saved-btn {
+  border: none;
+  background-color: transparent;
+}
+.header__user-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  width: 112px;
+  height: 48px;
+  top: 19px;
+  left: 1224px;
+  opacity: 1;
+  border-width: 1px;
+  border-radius: 100px;
+  border-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+}
+
+.header__username {
+  margin-right: 2px;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.header__arrow-icon {
+  width: 17px;
+  height: 16px;
 }

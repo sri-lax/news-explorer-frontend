@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Routes, Route } from "react-router-dom";
 import {
   getSavedArticles,
   saveArticle,
@@ -16,16 +14,24 @@ import Main from "../Main/Main";
 import SearchForm from "../SearchForm/SearchForm";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import RegisterSuccessPopup from "../RegisterSuccessPopup/RegisterSuccessPopup";
 import Navigation from "../Navigation/Navigation";
 import SavedArticles from "../SavedArticles/SavedArticles";
+
 function App() {
   const [articleData, setArticleData] = useState({ type: " " });
   const [activeModal, setActiveModal] = useState("");
   const [savedArticles, setSavedArticles] = useState([]);
+  const [showRegisterSuccess, setShowRegisterSuccess] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const location = useLocation();
   const [currentUser, setCurrentUser] = useState(null);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const showSavedHeader = !!currentUser;
+
   const isSavedPage = location.pathname === "/saved-news";
+
   useEffect(() => {
     getSavedArticles()
       .then((data) => {
@@ -39,8 +45,12 @@ function App() {
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
-  const navigate = useNavigate();
+
   const handleToggleSaveArticle = (article) => {
+    if (!currentUser) {
+      return;
+    }
+
     const match = savedArticles.find((a) => a._id === article._id);
 
     if (match && match.id) {
@@ -88,6 +98,14 @@ function App() {
         <Header
           handleAddClick={handleAddClick}
           handleRegisterClick={handleRegisterClick}
+          currentUser={currentUser}
+          onSignOut={() => {
+            setCurrentUser(null);
+            localStorage.removeItem("currentUser");
+            setShowSavedHeader(false);
+            navigate("/");
+          }}
+          showSavedHeader={showSavedHeader}
         />
         <Navigation />
         {isLoaded && (
@@ -101,6 +119,7 @@ function App() {
                     articleData={articleData}
                     savedArticles={savedArticles}
                     onToggleSaveArticle={handleToggleSaveArticle}
+                    currentUser={currentUser}
                   />
                 </>
               }
@@ -112,7 +131,7 @@ function App() {
                   savedArticles={savedArticles}
                   isLoaded={isLoaded}
                   onDeleteArticle={handleDeleteArticle}
-                  username={currentUser?.username}
+                  userName={currentUser?.userName}
                 />
               }
             />
@@ -127,8 +146,8 @@ function App() {
             .then((user) => {
               console.log("Logged in:", user);
               setCurrentUser(user);
+              localStorage.setItem("currentUser", JSON.stringify(user));
               closeActiveModal();
-              navigate("/saved-news");
             })
             .catch(() => alert("Login failed"));
         }}
@@ -143,13 +162,22 @@ function App() {
             .then((user) => {
               console.log("Registered:", user);
               setCurrentUser(user);
+              localStorage.setItem("currentUser", JSON.stringify(user));
+              setShowRegisterSuccess(true);
               closeActiveModal();
-              navigate("/saved-news");
             })
             .catch(() => alert("Registration failed"));
         }}
         setActiveModal={setActiveModal}
       />
+      {showRegisterSuccess && (
+        <RegisterSuccessPopup
+          onSignInClick={() => {
+            setShowRegisterSuccess(false);
+            setActiveModal("header__signin");
+          }}
+        />
+      )}
     </div>
   );
 }
