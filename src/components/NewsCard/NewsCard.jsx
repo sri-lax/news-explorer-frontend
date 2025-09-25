@@ -2,6 +2,7 @@ import "./NewsCard.css";
 import { useState } from "react";
 
 import SaveBtn from "../../assets/saveBtn.svg";
+import SaveBtnBlue from "../../assets/saveBtnBlue.svg";
 function NewsCard({ item, isSaved, onToggleSave, currentUser }) {
   const [showWarning, setShowWarning] = useState(false);
 
@@ -40,7 +41,11 @@ function NewsCard({ item, isSaved, onToggleSave, currentUser }) {
             onClick={handleSaveClick}
             aria-label={isSaved ? "Unsave article" : "Save article"}
           >
-            <img src={SaveBtn} alt="Save icon" className="card__save-icon" />
+            <img
+              src={isSaved ? SaveBtnBlue : SaveBtn}
+              alt="Save icon"
+              className="card__save-icon"
+            />
           </button>
         </div>
       </div>

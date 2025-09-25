@@ -1,11 +1,23 @@
 import "./About.css";
 import authorImg from "../../assets/authorImg.svg";
+import AuthorPic from "../../assets/AuthorPic.jpg";
 
 function About() {
   return (
     <section className="about">
       <div className="author__info">
-        <img className="author__img" src={authorImg} alt="author" />{" "}
+        <div className="author__img-wrapper">
+          <img
+            className="author__placeholder"
+            src={authorImg}
+            alt="placeholder circle"
+          />
+          <img
+            className="author__img"
+            src={AuthorPic}
+            alt="Sreelekshmi Anitha Krishnan"
+          />
+        </div>
       </div>
       <div className="author__text">
         <h1 className="about-author">About the author</h1>

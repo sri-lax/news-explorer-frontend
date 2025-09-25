@@ -58,6 +58,14 @@ function App() {
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
 
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("currentUser");
+    setSavedArticles([]);
+    setShowRegisterSuccess(false);
+    navigate("/");
+  };
+
   const handleToggleSaveArticle = (article) => {
     if (!currentUser) {
       return;
@@ -118,14 +126,10 @@ function App() {
           handleAddClick={handleAddClick}
           handleRegisterClick={handleRegisterClick}
           currentUser={currentUser}
-          onSignOut={() => {
-            setCurrentUser(null);
-            localStorage.removeItem("currentUser");
-            setShowSavedHeader(false);
-            navigate("/");
-          }}
+          onSignOut={handleLogout}
           showSavedHeader={showSavedHeader}
         />
+
         <Navigation />
         {isLoaded && (
           <Routes>
