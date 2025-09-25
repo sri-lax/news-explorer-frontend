@@ -49,6 +49,39 @@
       "date": "September 24, 2025",
       "source": "News Explorer",
       "id": "3"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "id": "nBmANUF_3",
+      "userId": "nBmANUF",
+      "date": "September 25, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "5",
+      "title": "Everyone Needs a Special 'Sit spot' ",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "id": "nBmANUF_5",
+      "userId": "nBmANUF",
+      "date": "September 25, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "1",
+      "title": "Nature makes you better",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Explore the science behind nature’s impact on your brain, body, and mood.",
+      "id": "nBmANUF_1",
+      "userId": "nBmANUF",
+      "date": "September 25, 2025",
+      "source": "News Explorer"
     }
   ],
   "users": [

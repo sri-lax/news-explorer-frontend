@@ -15,7 +15,9 @@ function NewsCard({ item, isSaved, onToggleSave, currentUser }) {
     if (!currentUser) {
       setShowWarning(true);
       setTimeout(() => setShowWarning(false), 3000);
+      return;
     }
+
     onToggleSave(item);
   };
 

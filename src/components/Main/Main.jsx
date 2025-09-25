@@ -32,7 +32,13 @@ function Main({
             <h2 className="cards__title">Search results</h2>
             <ul className="cards__list">
               {filteredArticles.slice(0, visibleCount).map((item) => {
-                const isSaved = savedArticles.some((a) => a._id === item._id);
+                const isSaved = savedArticles.some(
+                  (a) =>
+                    a._id === item._id ||
+                    a.id === item._id ||
+                    a._id === item.id ||
+                    a.id === item.id
+                );
                 console.log("Rendering card:", item._id, "Saved:", isSaved);
 
                 return (

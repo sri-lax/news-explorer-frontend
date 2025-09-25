@@ -7,6 +7,7 @@ import {
   loginUser,
   registerUser,
 } from "../../utils/api";
+import { v4 as uuidv4 } from "uuid";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -33,14 +34,25 @@ function App() {
   const isSavedPage = location.pathname === "/saved-news";
 
   useEffect(() => {
+    const storedUser = localStorage.getItem("currentUser");
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  useEffect(() => {
     getSavedArticles()
       .then((data) => {
-        console.log("Hydrated articles:", data);
-        setSavedArticles(data);
+        if (currentUser) {
+          const userSaved = data.filter((a) => a.userId === currentUser.id);
+          setSavedArticles(userSaved);
+        } else {
+          setSavedArticles([]);
+        }
         setIsLoaded(true);
       })
       .catch((err) => console.error("Failed to fetch saved articles:", err));
-  }, []);
+  }, [currentUser]);
 
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
@@ -50,8 +62,11 @@ function App() {
     if (!currentUser) {
       return;
     }
+    const normalizedId = article._id || article.id;
 
-    const match = savedArticles.find((a) => a._id === article._id);
+    const match = savedArticles.find(
+      (a) => a.id === `${currentUser.id}_${normalizedId}`
+    );
 
     if (match && match.id) {
       deleteArticle(match.id)
@@ -60,24 +75,28 @@ function App() {
           console.log("Unsave successful:", match.title);
         })
         .catch((err) => console.error("Failed to unsave article:", err));
-    } else {
-      const enriched = {
-        ...article,
-        date: new Date().toLocaleDateString("default", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        }),
-        source: "News Explorer",
-      };
-
-      saveArticle(enriched)
-        .then((newArticle) => {
-          setSavedArticles((prev) => [...prev, newArticle]);
-          console.log("Save successful:", newArticle.title);
-        })
-        .catch((err) => console.error("Failed to save article:", err));
+      return;
     }
+    if (match) return;
+
+    const enriched = {
+      ...article,
+      id: `${currentUser.id}_${normalizedId}`,
+      userId: currentUser.id,
+      date: new Date().toLocaleDateString("default", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+      source: "News Explorer",
+    };
+
+    saveArticle(enriched)
+      .then((newArticle) => {
+        setSavedArticles((prev) => [...prev, newArticle]);
+        console.log("Save successful:", newArticle.title);
+      })
+      .catch((err) => console.error("Failed to save article:", err));
   };
   const handleDeleteArticle = (article) => {
     if (!article || !article.id) {
