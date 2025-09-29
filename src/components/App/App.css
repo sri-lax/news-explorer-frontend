@@ -1,13 +1,17 @@
 .page {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.page__content {
   background-image: url("../../assets/backgroundImg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  align-items: center;
   height: 576px;
-}
-
-.page__content {
+  max-width: 1440px;
   margin: 0 auto;
 }
 .page__no-bg {

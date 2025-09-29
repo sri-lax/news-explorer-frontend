@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
+function RegisterModal({
+  isOpen,
+  onClose,
+  onRegister,
+  setActiveModal,
+  modalRef,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setName] = useState("");
@@ -29,6 +35,7 @@ function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
       isOpen={isOpen}
       handleCloseClick={onClose}
       onSubmit={handleSubmit}
+      modalRef={modalRef}
     >
       <label className="modal__label">
         Email
@@ -61,8 +68,12 @@ function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
         />
       </label>
 
-      <button type="submit" className="modal__submit">
-        Sign in
+      <button
+        type="submit"
+        disabled={!email || !password || !userName}
+        className="modal__submit"
+      >
+        Sign up
       </button>
 
       <button
@@ -73,7 +84,7 @@ function RegisterModal({ isOpen, onClose, onRegister, setActiveModal }) {
           setActiveModal("header__signin");
         }}
       >
-        or Sign up
+        <span className="signin__or">or</span> Sign in
       </button>
     </ModalWithForm>
   );

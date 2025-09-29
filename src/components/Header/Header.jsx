@@ -1,46 +1,137 @@
 import "./Header.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import unionIcon from "../../assets/unionIcon.svg";
+import dropDown from "../../assets/dropDown.svg";
+import closeButton from "../../assets/closeButton.svg";
 
-function Header({ handleAddClick, currentUser, onSignOut, showSavedHeader }) {
+function Header({
+  handleAddClick,
+  currentUser,
+  onSignOut,
+  isDropdownOpen,
+  toggleDropdown,
+  closeDropdown,
+  showSavedHeader,
+  onHomeClick,
+}) {
   const navigate = useNavigate();
   const location = useLocation();
   const isSavedPage = location.pathname === "/saved-news";
-
   const useSavedStyle = isSavedPage || showSavedHeader;
 
   return (
     <header className={`header ${isSavedPage ? "header_type_saved-news" : ""}`}>
-      <div className="header__title">
+      <div className="header__container">
         <h1 className="header__news-title">News Explorer</h1>
+
+        {/* Mobile dropdown button next to title */}
+        {currentUser && useSavedStyle && (
+          <div className="header__dropdown-wrapper header__show-on-mobile">
+            <button className="header__user-btn" onClick={toggleDropdown}>
+              <span className="header__username">{currentUser.userName}</span>
+              <img
+                src={dropDown}
+                alt="Dropdown arrow"
+                className="header__arrow-icon"
+              />
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="header__user-menu">
-        <button className="header__home-btn" onClick={() => navigate("/")}>
+        {/* Desktop-only navigation */}
+        <button
+          className="header__home-btn header__hide-on-mobile"
+          onClick={() => {
+            onHomeClick();
+            navigate("/");
+          }}
+        >
           Home
         </button>
+
         {currentUser && (
           <button
-            className="header__saved-btn"
+            className="header__saved-btn header__hide-on-mobile"
             onClick={() => navigate("/saved-news")}
           >
             Saved Articles
           </button>
         )}
+
+        {!useSavedStyle && (
+          <button
+            onClick={handleAddClick}
+            className="header__signin header__hide-on-mobile"
+          >
+            Sign in
+          </button>
+        )}
+
+        {/* Desktop sign-out button */}
         {currentUser && useSavedStyle && (
-          <button className="header__user-btn" onClick={onSignOut}>
+          <button
+            className="header__user-btn header__hide-on-mobile"
+            onClick={onSignOut}
+          >
             <span className="header__username">{currentUser.userName}</span>
             <img
               src={unionIcon}
-              alt="Dropdown arrow"
+              alt="Sign out icon"
               className="header__arrow-icon"
             />
           </button>
         )}
-        {!useSavedStyle && (
-          <button onClick={handleAddClick} className="header__signin">
-            Sign in
-          </button>
+
+        {/* Mobile dropdown menu content */}
+        {isDropdownOpen && (
+          <div className="header__dropdown-menu header__show-on-mobile">
+            {currentUser ? (
+              <>
+                <button
+                  className="header__dropdown-item"
+                  onClick={() => {
+                    closeDropdown();
+                    navigate("/saved-news");
+                  }}
+                >
+                  Saved Articles
+                </button>
+                <button className="header__dropdown-item" onClick={onSignOut}>
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="header__dropdown-item"
+                  onClick={() => {
+                    closeDropdown();
+                    navigate("/");
+                  }}
+                >
+                  Home
+                </button>
+                <button
+                  className="header__dropdown-item"
+                  onClick={() => {
+                    closeDropdown();
+                    handleAddClick();
+                  }}
+                >
+                  Sign in
+                </button>
+              </>
+            )}
+            <button className="header__dropdown-close" onClick={closeDropdown}>
+              <img
+                src={closeButton}
+                alt="Close dropdown"
+                className="close__button"
+              />
+            </button>
+          </div>
         )}
       </div>
     </header>

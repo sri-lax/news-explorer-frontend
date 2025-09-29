@@ -1,1 +1,25 @@
 @import url(./vendor/normalize.css);
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./vendor/Font/roboto-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./vendor/Fonts/roboto-slab-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./vendor/Fonts/roboto-slab-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

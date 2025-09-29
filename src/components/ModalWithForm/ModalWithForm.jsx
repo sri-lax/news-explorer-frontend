@@ -3,15 +3,20 @@ import closeButton from "../../assets/closeButton.svg";
 
 function ModalWithForm({
   children,
-  buttonText,
   title,
   isOpen,
   handleCloseClick,
   onSubmit,
 }) {
   return (
-    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
-      <div className="modal__content modal__content_type_image">
+    <div
+      className={`modal ${isOpen ? "modal_opened" : ""}`}
+      onClick={handleCloseClick}
+    >
+      <div
+        className="modal__content modal__content_type_image"
+        onClick={(e) => e.stopPropagation()}
+      >
         <h2 className="modal__title">{title}</h2>
         <button
           onClick={handleCloseClick}

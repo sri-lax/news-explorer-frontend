@@ -1,24 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Main.css";
 import About from "../About/About";
 import NewsCard from "../NewsCard/NewsCard";
-<button className="news__show-more">Show more</button>;
-import { defaultArticles } from "../../utils/constants.js";
+import Preloader from "../Preloader/Preloader";
+import sadFaceIcon from "../../assets/sadFaceIcon.svg";
 
 function Main({
   articleData,
   savedArticles,
   onToggleSaveArticle,
   currentUser,
+  filteredArticles,
+  isSearching,
+  searchError,
 }) {
   const [visibleCount, setVisibleCount] = useState(3);
-
-  const filteredArticles =
-    articleData.type.trim() === ""
-      ? []
-      : defaultArticles.filter(
-          (item) => item.name.toLowerCase() === articleData.type.toLowerCase()
-        );
 
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 3);
@@ -27,7 +23,33 @@ function Main({
   return (
     <main className="main">
       <section className="cards">
-        {filteredArticles.length > 0 && (
+        {isSearching && <Preloader />}
+
+        {!isSearching && searchError && (
+          <p className="cards__error">{searchError}</p>
+        )}
+
+        {!isSearching &&
+          !searchError &&
+          filteredArticles.length === 0 &&
+          articleData.type.trim() !== "" && (
+            <>
+              <h2 className="cards__empty">
+                <img
+                  src={sadFaceIcon}
+                  alt="Nothing found"
+                  className="cards__icon"
+                />
+                Nothing found
+              </h2>
+              <p className="cards__empty-text" role="alert">
+                Sorry, but nothing matched your search terms. Please try again
+                with different keywords.
+              </p>
+            </>
+          )}
+
+        {!isSearching && !searchError && filteredArticles.length > 0 && (
           <>
             <h2 className="cards__title">Search results</h2>
             <ul className="cards__list">
@@ -39,7 +61,6 @@ function Main({
                     a._id === item.id ||
                     a.id === item.id
                 );
-                console.log("Rendering card:", item._id, "Saved:", isSaved);
 
                 return (
                   <NewsCard

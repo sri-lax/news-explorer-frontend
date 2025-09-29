@@ -8,6 +8,12 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
 
   console.log("Rendering savedArticles:", savedArticles);
 
+  const uniquePlaces = [
+    ...new Set(savedArticles.map((item) => item.place).filter(Boolean)),
+  ];
+  const displayedPlaces = uniquePlaces.slice(0, 2);
+  const remainingCount = uniquePlaces.length - displayedPlaces.length;
+
   return (
     <main className="saved-articles">
       <section className="saved-articles__header">
@@ -15,6 +21,15 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
         <h2 className="saved-articles__count">
           {userName}, you have {savedArticles.length} saved articles
         </h2>
+        {uniquePlaces.length > 0 && (
+          <p className="saved-articles__keywords">
+            By keywords:{" "}
+            <span className="saved-articles__keywords-bold">
+              {displayedPlaces.join(", ")}
+              {remainingCount > 0 && ` and ${remainingCount} other`}
+            </span>
+          </p>
+        )}
       </section>
 
       {savedArticles.length === 0 ? (
@@ -23,12 +38,18 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
         <ul className="saved-articles__list">
           {savedArticles.map((item) => (
             <li key={item.id} className="saved-articles__card">
+              <p className="saved-articles__tag">
+                {item.place || "Unknown place"}
+              </p>
+
               <div className="saved-articles__card-header">
                 <button
                   className="saved-articles__delete-btn"
                   onClick={() => onDeleteArticle(item)}
+                  aria-label="Remove from saved"
                 >
                   <img src={deleteBtn} alt="Delete" className="delete__icon" />
+                  <span className="delete__tooltip">Remove from saved</span>
                 </button>
               </div>
 

@@ -4,7 +4,13 @@
   padding: 0 20px;
   border-bottom: 1px solid #ddd;
 }
-
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
 .header__news-title,
 .header__home-btn,
 .header__signin,
@@ -28,11 +34,18 @@
   margin-top: 30px;
 }
 .header__news-title {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 700;
   font-size: 20px;
+  line-height: 24px;
   padding-left: 76px;
   margin: 0;
 }
 .header__user-menu {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -41,17 +54,22 @@
 }
 .header__home-btn {
   background: transparent;
+  border-color: transparent;
   border: none;
   color: rgba(255, 255, 255, 1);
 }
 
 .header__signin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   background: transparent;
   border-radius: 100px;
   width: 176px;
   height: 48px;
   color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .header__user-menu:hover {
@@ -59,9 +77,18 @@
 }
 .header__saved-btn {
   border: none;
+  width: 170px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   background-color: transparent;
 }
 .header__user-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   display: flex;
   align-items: center;
   background: none;
@@ -70,15 +97,18 @@
   top: 19px;
   left: 1224px;
   opacity: 1;
-  border-width: 1px;
   border-radius: 100px;
-  border-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
   cursor: pointer;
   font-size: 16px;
-  color: #000;
+  color: inherit;
 }
 
 .header__username {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   margin-right: 2px;
   font-weight: 500;
   padding: 15px;
@@ -87,4 +117,118 @@
 .header__arrow-icon {
   width: 17px;
   height: 16px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+.header_type_saved-news .header__arrow-icon {
+  filter: none;
+}
+.header__dropdown-wrapper {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.header__dropdown-menu {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header__dropdown-item {
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 12px 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: #000;
+}
+
+.header__dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.header__dropdown-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  margin-top: 8px;
+}
+.close__button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.header__hide-on-mobile {
+  display: block;
+}
+
+.header__show-on-mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .header__container {
+    padding: 0 10px;
+  }
+  .header__user-menu {
+    padding-right: 20px;
+    gap: 8px;
+  }
+  .header__signin {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .header__news-title {
+    padding-left: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .header__title {
+    margin-top: 0;
+  }
+
+  .header__user-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: none;
+    border: none;
+  }
+
+  .header__arrow-icon {
+    width: 20px;
+    height: 20px;
+    filter: none !important;
+  }
+
+  .header__hide-on-mobile {
+    display: none;
+  }
+
+  .header__show-on-mobile {
+    display: block;
+  }
 }

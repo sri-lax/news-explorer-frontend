@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate, Routes, Route } from "react-router-dom";
 import {
   getSavedArticles,
@@ -6,8 +6,8 @@ import {
   deleteArticle,
   loginUser,
   registerUser,
-} from "../../utils/api";
-import { v4 as uuidv4 } from "uuid";
+} from "../../utils/NewsExplorerApi";
+import { defaultArticles } from "../../utils/constants";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -18,6 +18,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import RegisterSuccessPopup from "../RegisterSuccessPopup/RegisterSuccessPopup";
 import Navigation from "../Navigation/Navigation";
 import SavedArticles from "../SavedArticles/SavedArticles";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [articleData, setArticleData] = useState({ type: " " });
@@ -26,12 +27,85 @@ function App() {
   const [showRegisterSuccess, setShowRegisterSuccess] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleHomeClick = () => {
+    setArticleData({ type: " " });
+    setFilteredArticles([]);
+    setIsSearching(false);
+    setSearchError(null);
+  };
 
   const location = useLocation();
   const navigate = useNavigate();
+  const modalRef = useRef();
   const showSavedHeader = !!currentUser;
 
   const isSavedPage = location.pathname === "/saved-news";
+
+  useEffect(() => {
+    setSearchError(null);
+
+    if (articleData.type.trim() !== "") {
+      setIsSearching(true);
+
+      setTimeout(() => {
+        try {
+          const filtered = defaultArticles.filter(
+            (item) => item.name.toLowerCase() === articleData.type.toLowerCase()
+          );
+
+          setFilteredArticles(filtered);
+          setIsSearching(false);
+        } catch (err) {
+          setSearchError(
+            "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+          );
+          setIsSearching(false);
+        }
+      }, 1000); // simulate delay
+    } else {
+      setFilteredArticles([]);
+    }
+  }, [articleData]);
+
+  useEffect(() => {
+    function handleEscape(e) {
+      if (e.key === "Escape") {
+        setActiveModal("");
+        setShowRegisterSuccess(false);
+      }
+    }
+
+    if (activeModal || showRegisterSuccess) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [activeModal, showRegisterSuccess]);
+
+  useEffect(() => {
+    function handleOutsideClick(e) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(e.target) &&
+        (activeModal || showRegisterSuccess)
+      ) {
+        setActiveModal("");
+        setShowRegisterSuccess(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [activeModal, showRegisterSuccess]);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
@@ -57,6 +131,8 @@ function App() {
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  const closeDropdown = () => setIsDropdownOpen(false);
 
   const handleLogout = () => {
     setCurrentUser(null);
@@ -125,9 +201,13 @@ function App() {
         <Header
           handleAddClick={handleAddClick}
           handleRegisterClick={handleRegisterClick}
+          isDropdownOpen={isDropdownOpen}
+          toggleDropdown={toggleDropdown}
+          closeDropdown={closeDropdown}
           currentUser={currentUser}
           onSignOut={handleLogout}
           showSavedHeader={showSavedHeader}
+          onHomeClick={handleHomeClick}
         />
 
         <Navigation />
@@ -143,6 +223,9 @@ function App() {
                     savedArticles={savedArticles}
                     onToggleSaveArticle={handleToggleSaveArticle}
                     currentUser={currentUser}
+                    filteredArticles={filteredArticles}
+                    isSearching={isSearching}
+                    searchError={searchError}
                   />
                 </>
               }
@@ -160,10 +243,12 @@ function App() {
             />
           </Routes>
         )}
+        <Footer />
       </div>
       <LoginModal
         isOpen={activeModal === "header__signin"}
         onClose={closeActiveModal}
+        modalRef={modalRef}
         onLogin={(credentials) => {
           loginUser(credentials)
             .then((user) => {
@@ -180,6 +265,7 @@ function App() {
       <RegisterModal
         isOpen={activeModal === "register"}
         onClose={closeActiveModal}
+        modalRef={modalRef}
         onRegister={(data) => {
           registerUser(data)
             .then((user) => {
