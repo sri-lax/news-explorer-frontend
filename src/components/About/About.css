@@ -144,7 +144,8 @@
     width: 272px;
     height: 272px;
     top: 65px;
-    left: -70px;
+    left: 5px;
+    padding: 0;
   }
   .author__text {
     margin: 0;

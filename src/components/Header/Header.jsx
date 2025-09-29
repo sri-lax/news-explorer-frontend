@@ -13,6 +13,7 @@ function Header({
   closeDropdown,
   showSavedHeader,
   onHomeClick,
+  dropdownRef,
 }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,14 +25,16 @@ function Header({
       <div className="header__container">
         <h1 className="header__news-title">News Explorer</h1>
 
-        {/* Mobile dropdown button next to title */}
-        {currentUser && useSavedStyle && (
-          <div className="header__dropdown-wrapper header__show-on-mobile">
+        {!isDropdownOpen && (
+          <div
+            className={`header__dropdown-wrapper header__show-on-mobile ${
+              isDropdownOpen ? "hidden" : ""
+            }`}
+          >
             <button className="header__user-btn" onClick={toggleDropdown}>
-              <span className="header__username">{currentUser.userName}</span>
               <img
                 src={dropDown}
-                alt="Dropdown arrow"
+                alt="Open menu"
                 className="header__arrow-icon"
               />
             </button>
@@ -42,7 +45,7 @@ function Header({
       <div className="header__user-menu">
         {/* Desktop-only navigation */}
         <button
-          className="header__home-btn header__hide-on-mobile"
+          className="header__home-btn header__hide-on-mobile "
           onClick={() => {
             onHomeClick();
             navigate("/");
@@ -86,51 +89,49 @@ function Header({
 
         {/* Mobile dropdown menu content */}
         {isDropdownOpen && (
-          <div className="header__dropdown-menu header__show-on-mobile">
-            {currentUser ? (
-              <>
-                <button
-                  className="header__dropdown-item"
-                  onClick={() => {
-                    closeDropdown();
-                    navigate("/saved-news");
-                  }}
-                >
-                  Saved Articles
-                </button>
-                <button className="header__dropdown-item" onClick={onSignOut}>
-                  Sign out
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  className="header__dropdown-item"
-                  onClick={() => {
-                    closeDropdown();
-                    navigate("/");
-                  }}
-                >
-                  Home
-                </button>
-                <button
-                  className="header__dropdown-item"
-                  onClick={() => {
-                    closeDropdown();
-                    handleAddClick();
-                  }}
-                >
-                  Sign in
-                </button>
-              </>
-            )}
-            <button className="header__dropdown-close" onClick={closeDropdown}>
-              <img
-                src={closeButton}
-                alt="Close dropdown"
-                className="close__button"
-              />
-            </button>
+          <div className="header__dropdown-overlay">
+            <div
+              className="header__dropdown-menu header__show-on-mobile"
+              ref={dropdownRef}
+            >
+              {currentUser ? (
+                <>
+                  <button
+                    className="header__dropdown-item"
+                    onClick={() => {
+                      closeDropdown();
+                      navigate("/saved-news");
+                    }}
+                  >
+                    Saved Articles
+                  </button>
+                  <button className="header__dropdown-item" onClick={onSignOut}>
+                    Sign out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    className="header__dropdown-item header__dropdown-homeBtn"
+                    onClick={() => {
+                      closeDropdown();
+                      navigate("/");
+                    }}
+                  >
+                    Home
+                  </button>
+                  <button
+                    className="header__dropdown-item header__signin-dropDown"
+                    onClick={() => {
+                      closeDropdown();
+                      handleAddClick();
+                    }}
+                  >
+                    Sign in
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         )}
       </div>

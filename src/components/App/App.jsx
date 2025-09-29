@@ -42,6 +42,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const modalRef = useRef();
+  const dropdownRef = useRef();
   const showSavedHeader = !!currentUser;
 
   const isSavedPage = location.pathname === "/saved-news";
@@ -128,6 +129,23 @@ function App() {
       .catch((err) => console.error("Failed to fetch saved articles:", err));
   }, [currentUser]);
 
+  useEffect(() => {
+    function handleOutsideDropdownClick(e) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target) &&
+        isDropdownOpen
+      ) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideDropdownClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideDropdownClick);
+    };
+  }, [isDropdownOpen]);
+
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
@@ -208,6 +226,7 @@ function App() {
           onSignOut={handleLogout}
           showSavedHeader={showSavedHeader}
           onHomeClick={handleHomeClick}
+          dropdownRef={dropdownRef}
         />
 
         <Navigation />
