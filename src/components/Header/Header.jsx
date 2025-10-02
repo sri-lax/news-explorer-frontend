@@ -28,7 +28,7 @@ function Header({
         <div className="header__dropdown-wrapper header__show-on-mobile">
           <button
             className="header__user-btn"
-            onClick={toggleDropdown} // ✅ This toggles open/close
+            onClick={toggleDropdown}
             aria-label={isDropdownOpen ? "Close menu" : "Open menu"}
           >
             <img
@@ -94,6 +94,16 @@ function Header({
             >
               {currentUser ? (
                 <>
+                  <button
+                    className="header__dropdown-item"
+                    onClick={() => {
+                      closeDropdown();
+                      navigate("/");
+                    }}
+                  >
+                    Home
+                  </button>
+
                   <button
                     className="header__dropdown-item"
                     onClick={() => {

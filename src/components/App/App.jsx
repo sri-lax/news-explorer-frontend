@@ -150,9 +150,9 @@ function App() {
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
   const toggleDropdown = () => {
-    console.log("Toggle clicked");
-    setIsDropdownOpen(false); // force close for testing
+    setIsDropdownOpen((prev) => !prev);
   };
+
   const closeDropdown = () => setIsDropdownOpen(false);
 
   const handleLogout = () => {
