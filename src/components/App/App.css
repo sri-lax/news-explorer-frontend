@@ -1,18 +1,20 @@
 .page {
-  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
 }
 
 .page__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   background-image: url("../../assets/backgroundImg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 576px;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 .page__no-bg {
   background-image: none;
