@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Main.css";
-import About from "../About/About";
+
 import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
 import sadFaceIcon from "../../assets/sadFaceIcon.svg";
@@ -83,9 +83,6 @@ function Main({
             )}
           </>
         )}
-      </section>
-      <section className="author">
-        <About />
       </section>
     </main>
   );

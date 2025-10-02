@@ -12,11 +12,11 @@ import { defaultArticles } from "../../utils/constants";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import RegisterSuccessPopup from "../RegisterSuccessPopup/RegisterSuccessPopup";
-import Navigation from "../Navigation/Navigation";
 import SavedArticles from "../SavedArticles/SavedArticles";
 import Footer from "../Footer/Footer";
 
@@ -149,7 +149,10 @@ function App() {
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
   const closeActiveModal = () => setActiveModal("");
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  const toggleDropdown = () => {
+    console.log("Toggle clicked");
+    setIsDropdownOpen(false); // force close for testing
+  };
   const closeDropdown = () => setIsDropdownOpen(false);
 
   const handleLogout = () => {
@@ -214,8 +217,8 @@ function App() {
   };
 
   return (
-    <div className={`page ${isSavedPage ? "page__no-bg" : ""}`}>
-      <div className="page__content">
+    <div className="page">
+      <div className={`page__content ${isSavedPage ? "page__no-bg" : ""}`}>
         <Header
           handleAddClick={handleAddClick}
           handleRegisterClick={handleRegisterClick}
@@ -229,83 +232,88 @@ function App() {
           dropdownRef={dropdownRef}
         />
 
-        <Navigation />
-        {isLoaded && (
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <SearchForm onSearch={setArticleData} />
-                  <Main
-                    articleData={articleData}
+        <div className="routes-wrapper">
+          {isLoaded && (
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <SearchForm onSearch={setArticleData} />
+                    <Main
+                      articleData={articleData}
+                      savedArticles={savedArticles}
+                      onToggleSaveArticle={handleToggleSaveArticle}
+                      currentUser={currentUser}
+                      filteredArticles={filteredArticles}
+                      isSearching={isSearching}
+                      searchError={searchError}
+                    />
+                  </>
+                }
+              />
+              <Route
+                path="/saved-news"
+                element={
+                  <SavedArticles
                     savedArticles={savedArticles}
-                    onToggleSaveArticle={handleToggleSaveArticle}
-                    currentUser={currentUser}
-                    filteredArticles={filteredArticles}
-                    isSearching={isSearching}
-                    searchError={searchError}
+                    isLoaded={isLoaded}
+                    onDeleteArticle={handleDeleteArticle}
+                    userName={currentUser?.userName}
                   />
-                </>
-              }
-            />
-            <Route
-              path="/saved-news"
-              element={
-                <SavedArticles
-                  savedArticles={savedArticles}
-                  isLoaded={isLoaded}
-                  onDeleteArticle={handleDeleteArticle}
-                  userName={currentUser?.userName}
-                />
-              }
-            />
-          </Routes>
-        )}
-        <Footer />
-      </div>
-      <LoginModal
-        isOpen={activeModal === "header__signin"}
-        onClose={closeActiveModal}
-        modalRef={modalRef}
-        onLogin={(credentials) => {
-          loginUser(credentials)
-            .then((user) => {
-              console.log("Logged in:", user);
-              setCurrentUser(user);
-              localStorage.setItem("currentUser", JSON.stringify(user));
-              closeActiveModal();
-            })
-            .catch(() => alert("Login failed"));
-        }}
-        setActiveModal={setActiveModal}
-      />
+                }
+              />
+            </Routes>
+          )}
+        </div>
 
-      <RegisterModal
-        isOpen={activeModal === "register"}
-        onClose={closeActiveModal}
-        modalRef={modalRef}
-        onRegister={(data) => {
-          registerUser(data)
-            .then((user) => {
-              console.log("Registered:", user);
-              setCurrentUser(user);
-              localStorage.setItem("currentUser", JSON.stringify(user));
-              setShowRegisterSuccess(true);
-              closeActiveModal();
-            })
-            .catch(() => alert("Registration failed"));
-        }}
-        setActiveModal={setActiveModal}
-      />
-      {showRegisterSuccess && (
-        <RegisterSuccessPopup
-          onSignInClick={() => {
-            setShowRegisterSuccess(false);
-            setActiveModal("header__signin");
+        <LoginModal
+          isOpen={activeModal === "header__signin"}
+          onClose={closeActiveModal}
+          modalRef={modalRef}
+          onLogin={(credentials) => {
+            loginUser(credentials)
+              .then((user) => {
+                console.log("Logged in:", user);
+                setCurrentUser(user);
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                closeActiveModal();
+              })
+              .catch(() => alert("Login failed"));
           }}
+          setActiveModal={setActiveModal}
         />
-      )}
+
+        <RegisterModal
+          isOpen={activeModal === "register"}
+          onClose={closeActiveModal}
+          modalRef={modalRef}
+          onRegister={(data) => {
+            registerUser(data)
+              .then((user) => {
+                console.log("Registered:", user);
+                setCurrentUser(user);
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                setShowRegisterSuccess(true);
+                closeActiveModal();
+              })
+              .catch(() => alert("Registration failed"));
+          }}
+          setActiveModal={setActiveModal}
+        />
+        {showRegisterSuccess && (
+          <RegisterSuccessPopup
+            onSignInClick={() => {
+              setShowRegisterSuccess(false);
+              setActiveModal("header__signin");
+            }}
+          />
+        )}
+      </div>
+
+      {!isSavedPage && <About />}
+
+      <Footer />
     </div>
   );
 }

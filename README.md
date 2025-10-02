@@ -12,6 +12,11 @@ Welcome to the frontend of **News Explorer**, a responsive web application that 
 - Responsive design for desktop and mobile
 - Conditional rendering based on authentication state
 - Smooth dropdown menu for mobile navigation
+- Buttons, inputs, and links styled for all states (hover, focus, active)
+- Reusable components implemented
+- Fonts connected via `@font-face` with system fallbacks
+- SVG icons used throughout
+- Form fields include placeholders and `required` attributes
 
 ## Tech Stack
 

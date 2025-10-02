@@ -25,21 +25,19 @@ function Header({
       <div className="header__container">
         <h1 className="header__news-title">News Explorer</h1>
 
-        {!isDropdownOpen && (
-          <div
-            className={`header__dropdown-wrapper header__show-on-mobile ${
-              isDropdownOpen ? "hidden" : ""
-            }`}
+        <div className="header__dropdown-wrapper header__show-on-mobile">
+          <button
+            className="header__user-btn"
+            onClick={toggleDropdown} // ✅ This toggles open/close
+            aria-label={isDropdownOpen ? "Close menu" : "Open menu"}
           >
-            <button className="header__user-btn" onClick={toggleDropdown}>
-              <img
-                src={dropDown}
-                alt="Open menu"
-                className="header__arrow-icon"
-              />
-            </button>
-          </div>
-        )}
+            <img
+              src={isDropdownOpen ? closeButton : dropDown}
+              alt=""
+              className="header__arrow-icon"
+            />
+          </button>
+        </div>
       </div>
 
       <div className="header__user-menu">

@@ -225,7 +225,7 @@
     border: none;
   }
 
-  .header__arrow-icon {
+  .header__dropDown-close {
     position: relative;
     left: 13px;
     width: 24px;
@@ -233,6 +233,24 @@
     filter: none !important;
     padding: 5px 9px 9px;
     filter: none !important;
+  }
+  .header__dropdown-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .header__user-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .header__arrow-icon {
+    width: 24px;
+    height: 24px;
   }
   .header__dropdown-overlay {
     position: fixed;
