@@ -1,5 +1,5 @@
 .saved-articles {
-  padding: 40px 80px;
+  padding: 40px 20px;
   background-color: #ffffff;
 }
 
@@ -20,7 +20,6 @@
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 40px;
-  width: 530px;
   height: 92px;
   opacity: 1;
   line-height: 46px;
@@ -230,5 +229,36 @@
   .saved-articles__card {
     width: 100%;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 380px) {
+  .saved-articles {
+    padding: 20px 16px;
+  }
+  .saved-articles__title {
+    font-size: 22px;
+    width: 100%;
+    line-height: 24px;
+  }
+  .saved-articles__count {
+    font-size: 32px;
+    height: 74px;
+    line-height: 36px;
+  }
+  .saved-articles__keywords {
+    font-size: 16px;
+  }
+  .saved-articles__keywords-bold {
+    font-size: 16px;
+  }
+  .saved-articles__tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    left: 12px;
+  }
+
+  .saved-articles__excerpt {
+    font-size: 13px;
+    padding: 21px 2px 4px;
   }
 }

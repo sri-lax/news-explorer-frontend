@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import unionIcon from "../../assets/unionIcon.svg";
 import dropDown from "../../assets/dropDown.svg";
 import closeButton from "../../assets/closeButton.svg";
+import Navigation from "../Navigation/Navigation";
 
 function Header({
   handleAddClick,
@@ -92,53 +93,13 @@ function Header({
               className="header__dropdown-menu header__show-on-mobile"
               ref={dropdownRef}
             >
-              {currentUser ? (
-                <>
-                  <button
-                    className="header__dropdown-item"
-                    onClick={() => {
-                      closeDropdown();
-                      navigate("/");
-                    }}
-                  >
-                    Home
-                  </button>
-
-                  <button
-                    className="header__dropdown-item"
-                    onClick={() => {
-                      closeDropdown();
-                      navigate("/saved-news");
-                    }}
-                  >
-                    Saved Articles
-                  </button>
-                  <button className="header__dropdown-item" onClick={onSignOut}>
-                    Sign out
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button
-                    className="header__dropdown-item header__dropdown-homeBtn"
-                    onClick={() => {
-                      closeDropdown();
-                      navigate("/");
-                    }}
-                  >
-                    Home
-                  </button>
-                  <button
-                    className="header__dropdown-item header__signin-dropDown"
-                    onClick={() => {
-                      closeDropdown();
-                      handleAddClick();
-                    }}
-                  >
-                    Sign in
-                  </button>
-                </>
-              )}
+              <Navigation
+                currentUser={currentUser}
+                onSignOut={onSignOut}
+                onHomeClick={onHomeClick}
+                handleAddClick={handleAddClick}
+                closeDropdown={closeDropdown}
+              />
             </div>
           </div>
         )}
