@@ -29,3 +29,7 @@ Welcome to the frontend of **News Explorer**, a responsive web application that 
 
 View the current pull request for **Stage 1: Frontend and API integration**  
 https://github.com/sri-lax/news-explorer-frontend/compare/main...stage-1-frontend-and-api
+
+The frontend is deployed on GitHub Pages and accessible here:
+
+[News Explorer Frontend](https://sri-lax.github.io/news-explorer-frontend)
