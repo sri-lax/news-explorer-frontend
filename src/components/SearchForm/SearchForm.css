@@ -93,10 +93,7 @@
 }
 @media (max-width: 500px) {
   .search-container {
-    position: relative;
-    top: 28px;
-    width: 100%;
-    padding: 0;
+    padding-bottom: 80px;
   }
   .search-title {
     font-size: 36px;
@@ -114,23 +111,20 @@
     padding: 0 10px;
   }
   .search__form {
-    position: relative;
     top: 15px;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-    max-width: 68%;
   }
   .search__input {
-    position: absolute;
     font-size: 14px;
     padding: 20px 32px;
+    width: 100%;
   }
   .search__button {
-    position: relative;
     width: 100%;
-    height: 57px;
+    position: absolute;
+    top: 80px;
+    height: 47px;
     font-size: 14px;
-    top: 78px;
   }
 }

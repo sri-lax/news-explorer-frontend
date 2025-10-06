@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation, useNavigate, Routes, Route } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import {
   getSavedArticles,
   saveArticle,
@@ -233,38 +239,37 @@ function App() {
         />
 
         <div className="routes-wrapper">
-          {isLoaded && (
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <SearchForm onSearch={setArticleData} />
-                    <Main
-                      articleData={articleData}
-                      savedArticles={savedArticles}
-                      onToggleSaveArticle={handleToggleSaveArticle}
-                      currentUser={currentUser}
-                      filteredArticles={filteredArticles}
-                      isSearching={isSearching}
-                      searchError={searchError}
-                    />
-                  </>
-                }
-              />
-              <Route
-                path="/saved-news"
-                element={
-                  <SavedArticles
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <SearchForm onSearch={setArticleData} />
+                  <Main
+                    articleData={articleData}
                     savedArticles={savedArticles}
-                    isLoaded={isLoaded}
-                    onDeleteArticle={handleDeleteArticle}
-                    userName={currentUser?.userName}
+                    onToggleSaveArticle={handleToggleSaveArticle}
+                    currentUser={currentUser}
+                    filteredArticles={filteredArticles}
+                    isSearching={isSearching}
+                    searchError={searchError}
                   />
-                }
-              />
-            </Routes>
-          )}
+                </>
+              }
+            />
+            <Route
+              path="/saved-news"
+              element={
+                <SavedArticles
+                  savedArticles={savedArticles}
+                  isLoaded={isLoaded}
+                  onDeleteArticle={handleDeleteArticle}
+                  userName={currentUser?.userName}
+                />
+              }
+            />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
         </div>
 
         <LoginModal
