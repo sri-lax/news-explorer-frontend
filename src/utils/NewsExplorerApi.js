@@ -31,8 +31,13 @@ export const registerUser = (user) =>
   }).then((res) => res.json());
 
 export const loginUser = async ({ email, password }) => {
-  const res = await fetch(`${userUrl}?email=${email}&password=${password}`);
+  const res = await fetch(`${userUrl}?email=${email}`);
   const users = await res.json();
-  if (users.length === 1) return users[0];
-  throw new Error("Invalid credentials");
+
+  const user = users.find((u) => u.password === password);
+  if (!user) {
+    throw new Error("Login failed: Invalid credentials");
+  }
+
+  return user;
 };
