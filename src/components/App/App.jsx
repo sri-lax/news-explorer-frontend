@@ -20,6 +20,8 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
+import { searchArticles } from "../../utils/NewsExplorerApi";
+
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import RegisterSuccessPopup from "../RegisterSuccessPopup/RegisterSuccessPopup";
@@ -27,7 +29,7 @@ import SavedArticles from "../SavedArticles/SavedArticles";
 import Footer from "../Footer/Footer";
 
 function App() {
-  const [articleData, setArticleData] = useState({ type: " " });
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeModal, setActiveModal] = useState("");
   const [savedArticles, setSavedArticles] = useState([]);
   const [showRegisterSuccess, setShowRegisterSuccess] = useState(false);
@@ -39,7 +41,7 @@ function App() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleHomeClick = () => {
-    setArticleData({ type: " " });
+    setSearchQuery("");
     setFilteredArticles([]);
     setIsSearching(false);
     setSearchError(null);
@@ -56,28 +58,31 @@ function App() {
   useEffect(() => {
     setSearchError(null);
 
-    if (articleData.type.trim() !== "") {
+    if (searchQuery?.trim() !== "") {
       setIsSearching(true);
 
       setTimeout(() => {
-        try {
-          const filtered = defaultArticles.filter(
-            (item) => item.name.toLowerCase() === articleData.type.toLowerCase()
-          );
+        searchArticles(searchQuery)
+          .then((data) => {
+            if (!Array.isArray(data)) {
+              throw new Error("Invalid response format");
+            }
+            setFilteredArticles(data); // ✅ Use the array directly
+            setIsSearching(false);
+          })
 
-          setFilteredArticles(filtered);
-          setIsSearching(false);
-        } catch (err) {
-          setSearchError(
-            "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
-          );
-          setIsSearching(false);
-        }
-      }, 1000); // simulate delay
+          .catch((err) => {
+            console.error("Search error:", err.message);
+            setSearchError(
+              "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+            );
+            setIsSearching(false);
+          });
+      }, 1000);
     } else {
       setFilteredArticles([]);
     }
-  }, [articleData]);
+  }, [searchQuery]);
 
   useEffect(() => {
     function handleEscape(e) {
@@ -244,9 +249,9 @@ function App() {
               path="/"
               element={
                 <>
-                  <SearchForm onSearch={setArticleData} />
+                  <SearchForm onSearch={setSearchQuery} />
                   <Main
-                    articleData={articleData}
+                    searchQuery={searchQuery}
                     savedArticles={savedArticles}
                     onToggleSaveArticle={handleToggleSaveArticle}
                     currentUser={currentUser}
@@ -260,12 +265,16 @@ function App() {
             <Route
               path="/saved-news"
               element={
-                <SavedArticles
-                  savedArticles={savedArticles}
-                  isLoaded={isLoaded}
-                  onDeleteArticle={handleDeleteArticle}
-                  userName={currentUser?.userName}
-                />
+                currentUser ? (
+                  <SavedArticles
+                    savedArticles={savedArticles}
+                    isLoaded={isLoaded}
+                    onDeleteArticle={handleDeleteArticle}
+                    userName={currentUser.userName}
+                  />
+                ) : (
+                  <Navigate to="/" />
+                )
               }
             />
             <Route path="*" element={<Navigate to="/" />} />

@@ -1,7 +1,18 @@
-const baseUrl = "http://localhost:3001/items";
-const userUrl = "http://localhost:3001/users";
+const userUrl = "https://news-explorer-backend-izis.onrender.com/users";
+const baseUrl = "https://news-explorer-backend-izis.onrender.com/items";
 
 export const getSavedArticles = () => fetch(baseUrl).then((res) => res.json());
+
+export const searchArticles = (query) => {
+  return fetch(
+    `https://news-explorer-backend-izis.onrender.com/search?q=${query}`
+  ).then((res) => {
+    if (!res.ok) {
+      throw new Error(`Search failed: ${res.status}`);
+    }
+    return res.json();
+  });
+};
 
 export const saveArticle = (article) => {
   return fetch(baseUrl, {

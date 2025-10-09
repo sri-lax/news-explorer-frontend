@@ -227,6 +227,111 @@
       "userId": "pw4B4rX",
       "date": "October 5, 2025",
       "source": "News Explorer"
+    },
+    {
+      "_id": "15",
+      "title": "Lotus",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://plus.unsplash.com/premium_photo-1693719515280-5d369d80aca6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbolic significance of purity, rebirth, and spiritual awakening",
+      "id": "pw4B4rX_15",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "17",
+      "title": "sunflower ",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1540039906769-84cf3d448bc1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbol of happiness, loyalty, and positivity in various cultures.",
+      "id": "pw4B4rX_17",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "16",
+      "title": "Tulip",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1586968295564-92fd7572718b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " cup-shaped flower that grows from a bulb and is known as a quintessential sign of spring. ",
+      "id": "pw4B4rX_16",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "6",
+      "title": "Everyone N",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "pw4B4rX_6",
+      "userId": "pw4B4rX"
+    },
+    {
+      "_id": "6",
+      "title": "Everyone N",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "demo1_6",
+      "userId": "demo1"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "demo1_3",
+      "userId": "demo1"
+    },
+    {
+      "_id": "1",
+      "title": "Nature makes you better",
+      "name": "Nature",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Explore the science behind nature’s impact on your brain, body, and mood.",
+      "id": "demo1_1",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "12",
+      "title": "Pizza ",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "cheesy delicious,crispy crust, or hot tasty",
+      "id": "demo1_12",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "10",
+      "title": " Eggs",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " This Egg Sandwich is simple, fast and delicious that everyone will love",
+      "id": "demo1_10",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
     }
   ],
   "users": [
@@ -283,6 +388,12 @@
       "password": "1234",
       "userName": "sree",
       "id": "pw4B4rX"
+    },
+    {
+      "id": "demo1",
+      "email": "reviewer@example.com",
+      "password": "123456",
+      "userName": "Reviewer"
     }
   ]
 }

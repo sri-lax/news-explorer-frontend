@@ -32,4 +32,11 @@ https://github.com/sri-lax/news-explorer-frontend/compare/main...stage-1-fronten
 
 The frontend is deployed on GitHub Pages and accessible here:
 
-[News Explorer Frontend](https://sri-lax.github.io/news-explorer-frontend)
+Test Credentials:
+Email: sree@yahoo.com
+Password: 1234
+
+- **Frontend**: [(https://sri-lax.github.io/news-explorer-frontend]
+
+- **Backend**: [https://news-explorer-backend-izis.onrender.com]
+  (git@github.com:sri-lax/news-explorer-backend.git)

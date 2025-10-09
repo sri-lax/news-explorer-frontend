@@ -6,7 +6,7 @@ import Preloader from "../Preloader/Preloader";
 import sadFaceIcon from "../../assets/sadFaceIcon.svg";
 
 function Main({
-  articleData,
+  searchQuery,
   savedArticles,
   onToggleSaveArticle,
   currentUser,
@@ -32,7 +32,7 @@ function Main({
         {!isSearching &&
           !searchError &&
           filteredArticles.length === 0 &&
-          articleData.type.trim() !== "" && (
+          searchQuery?.trim() !== "" && (
             <>
               <h2 className="cards__empty">
                 <img
@@ -64,7 +64,7 @@ function Main({
 
                 return (
                   <NewsCard
-                    key={item._id}
+                    key={`${item.userId}_${item._id || item.id}`}
                     item={item}
                     isSaved={isSaved}
                     onToggleSave={onToggleSaveArticle}
