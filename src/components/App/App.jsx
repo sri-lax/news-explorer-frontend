@@ -13,7 +13,6 @@ import {
   loginUser,
   registerUser,
 } from "../../utils/NewsExplorerApi";
-import { defaultArticles } from "../../utils/constants";
 
 import "./App.css";
 import Header from "../Header/Header";

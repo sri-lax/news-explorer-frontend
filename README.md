@@ -40,3 +40,9 @@ Password: 1234
 
 - **Backend**: [https://news-explorer-backend-izis.onrender.com]
   (git@github.com:sri-lax/news-explorer-backend.git)
+
+- The file constants.js includes a defaultArticles array that was used during early development.
+
+- These articles are no longer used for rendering — the frontend now fetches live data from the backend using the /search route.
+- The app uses filteredArticles from the backend response to display search results.
+- defaultArticles is still present in the codebase but is safe to keep for testing or demo purposes.

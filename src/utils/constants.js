@@ -1,3 +1,5 @@
+//  Not used in rendering — kept for local testing/demo only
+
 const defaultArticles = [
   {
     _id: "0",
