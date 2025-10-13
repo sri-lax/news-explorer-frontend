@@ -11,7 +11,7 @@ function Navigation({
   const navigate = useNavigate();
 
   return (
-    <nav className="navigation">
+    <nav className="navigation" role="navigation" aria-label="Main navigation">
       {currentUser ? (
         <>
           <button
@@ -34,6 +34,7 @@ function Navigation({
             Saved Articles
           </button>
           <button
+            type="button"
             className="navigation__item"
             onClick={() => {
               closeDropdown?.();
@@ -46,6 +47,7 @@ function Navigation({
       ) : (
         <>
           <button
+            type="button"
             className="navigation__item"
             onClick={() => {
               closeDropdown?.();
@@ -56,6 +58,7 @@ function Navigation({
             Home
           </button>
           <button
+            type="button"
             className="navigation__item"
             onClick={() => {
               closeDropdown?.();

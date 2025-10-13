@@ -23,9 +23,10 @@ function About() {
         <h1 className="about-author">About the author</h1>
 
         <p className="author__description">
-          I'm Sreelekshmi Anitha Krishnan, a full-stack developer with hands-on
-          experience in React for building dynamic user interfaces, and tools
-          like Express.js and MongoDB for backend and database development.
+          I&apos;m Sreelekshmi Anitha Krishnan, a full-stack developer with
+          hands-on experience in React for building dynamic user interfaces, and
+          tools like Express.js and MongoDB for backend and database
+          development.
         </p>
         <p className="author__description">
           Through my training at TripleTen, I gained practical skills in

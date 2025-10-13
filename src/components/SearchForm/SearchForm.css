@@ -47,7 +47,12 @@
 }
 
 .search__input:focus {
-  border-color: rgba(47, 113, 229, 1);
+  outline: none;
+  border: 2px solid rgba(47, 113, 229, 1);
+  box-shadow: 0 0 0 3px rgba(47, 113, 229, 0.3);
+  background-color: #fff;
+  border-radius: 6px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .search__button {
@@ -61,6 +66,10 @@
   border-radius: 100px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
+}
+.search__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 113, 229, 0.4);
 }
 
 .search__button:hover {

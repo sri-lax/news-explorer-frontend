@@ -41,10 +41,12 @@ function Header({
         </div>
       </div>
 
-      <div className="header__user-menu">
+      <nav className="header__user-menu" aria-label="Primary navigation">
         {/* Desktop-only navigation */}
         <button
-          className="header__home-btn header__hide-on-mobile "
+          className={`header__home-btn header__hide-on-mobile ${
+            location.pathname === "/" ? "header__link_active" : ""
+          }`}
           onClick={() => {
             onHomeClick();
             navigate("/");
@@ -55,7 +57,9 @@ function Header({
 
         {currentUser && (
           <button
-            className="header__saved-btn header__hide-on-mobile"
+            className={`header__saved-btn header__hide-on-mobile ${
+              location.pathname === "/saved-news" ? "header__link_active" : ""
+            }`}
             onClick={() => navigate("/saved-news")}
           >
             Saved Articles
@@ -89,7 +93,7 @@ function Header({
         {/* Mobile dropdown menu content */}
         {isDropdownOpen && (
           <div className="header__dropdown-overlay">
-            <div
+            <nav
               className="header__dropdown-menu header__show-on-mobile"
               ref={dropdownRef}
             >
@@ -100,10 +104,10 @@ function Header({
                 handleAddClick={handleAddClick}
                 closeDropdown={closeDropdown}
               />
-            </div>
+            </nav>
           </div>
         )}
-      </div>
+      </nav>
     </header>
   );
 }

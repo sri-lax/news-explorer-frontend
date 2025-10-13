@@ -1,5 +1,5 @@
 import "./LoginModal.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
@@ -7,7 +7,7 @@ function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
 
-  // ✅ Real-time email validation
+  //  Real-time email validation
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
@@ -20,7 +20,7 @@ function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
     }
   };
 
-  // ✅ Final validation on submit
+  //  Final validation on submit
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,7 +35,7 @@ function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
     handleClose(); // Clear form and close
   };
 
-  // ✅ Clear form on close
+  // Clear form on close
   const handleClose = () => {
     setEmail("");
     setPassword("");
@@ -56,6 +56,7 @@ function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
         Email
         <input
           type="email"
+          placeholder="Enter email"
           className={`modal__input ${emailError ? "modal__input-error" : ""}`}
           value={email}
           onChange={handleEmailChange}
@@ -68,6 +69,7 @@ function LoginModal({ isOpen, onClose, onLogin, modalRef, setActiveModal }) {
         Password
         <input
           type="password"
+          placeholder="Enter password"
           className="modal__input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

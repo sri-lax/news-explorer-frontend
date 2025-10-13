@@ -3,11 +3,13 @@
   flex-direction: column;
   min-height: 100vh;
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
-.page__content {
+.page__content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -25,4 +27,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 516px) {
+  .page__content,
+  .routes-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
 }

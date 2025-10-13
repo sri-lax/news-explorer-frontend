@@ -35,9 +35,13 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
       {savedArticles.length === 0 ? (
         <p className="saved-articles__empty">No saved articles yet.</p>
       ) : (
-        <ul className="saved-articles__list">
+        <section className="saved-articles__list">
           {savedArticles.map((item) => (
-            <li key={item.id} className="saved-articles__card">
+            <article
+              key={item.id}
+              className="saved-articles__card"
+              aria-label={`Saved article: ${item.title}`}
+            >
               <p className="saved-articles__tag">
                 {item.place || "Unknown place"}
               </p>
@@ -48,8 +52,17 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
                   onClick={() => onDeleteArticle(item)}
                   aria-label="Remove from saved"
                 >
-                  <img src={deleteBtn} alt="Delete" className="delete__icon" />
-                  <span className="delete__tooltip">Remove from saved</span>
+                  <img
+                    src={deleteBtn}
+                    alt="Delete"
+                    className="saved-articles__delete-icon"
+                  />
+                  <span
+                    className="saved-articles__delete-tooltip
+"
+                  >
+                    Remove from saved
+                  </span>
                 </button>
               </div>
 
@@ -69,9 +82,9 @@ function SavedArticles({ savedArticles, isLoaded, onDeleteArticle, userName }) {
                   {item.source || "Unknown source"}
                 </p>
               </div>
-            </li>
+            </article>
           ))}
-        </ul>
+        </section>
       )}
     </main>
   );

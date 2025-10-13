@@ -15,9 +15,9 @@ import {
 } from "../../utils/NewsExplorerApi";
 
 import "./App.css";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
 import { searchArticles } from "../../utils/NewsExplorerApi";
 
@@ -228,7 +228,9 @@ function App() {
 
   return (
     <div className="page">
-      <div className={`page__content ${isSavedPage ? "page__no-bg" : ""}`}>
+      <div
+        className={`page__content-wrapper  ${isSavedPage ? "page__no-bg" : ""}`}
+      >
         <Header
           handleAddClick={handleAddClick}
           handleRegisterClick={handleRegisterClick}
@@ -257,6 +259,7 @@ function App() {
                     filteredArticles={filteredArticles}
                     isSearching={isSearching}
                     searchError={searchError}
+                    showAbout={!isSavedPage}
                   />
                 </>
               }
@@ -323,8 +326,6 @@ function App() {
           />
         )}
       </div>
-
-      {!isSavedPage && <About />}
 
       <Footer />
     </div>

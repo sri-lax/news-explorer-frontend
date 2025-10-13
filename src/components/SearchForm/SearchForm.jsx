@@ -11,7 +11,7 @@ function SearchForm({ onSearch }) {
 
   return (
     <div className="search-container">
-      <h1 className="search-title">What's going on in the world?</h1>
+      <h1 className="search-title">What&apos;s going on in the world?</h1>
       <p className="search-subtitle">
         Find the latest news on any topic and save them in your personal
         account.

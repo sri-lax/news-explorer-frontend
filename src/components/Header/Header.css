@@ -2,7 +2,7 @@
   display: flex;
   height: 80px;
   padding: 0 20px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd54;
 }
 .header__container {
   display: flex;
@@ -187,6 +187,15 @@
 .header__dropdown-wrapper.hidden {
   opacity: 0;
   pointer-events: none;
+}
+.header__link_active {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 1);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 33px;
+}
+.header_type_saved-news .header__link_active {
+  text-decoration-color: #000000 !important;
 }
 
 @media screen and (max-width: 768px) {

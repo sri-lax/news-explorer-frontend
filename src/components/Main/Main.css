@@ -2,6 +2,17 @@
   margin-top: 134px;
   background-color: rgba(245, 246, 247, 1);
 }
+.main__content-with-bg {
+  background-image: url("../../assets/backgroundImg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main__about-wrapper {
+  background-color: #ffffff;
+  color: #000000;
+}
 .cards__title {
   max-width: 712px;
   font-family: "Roboto Slab", serif;
@@ -88,6 +99,20 @@
     font-size: 16px;
   }
 }
+@media (max-width: 516px) {
+  .cards__title {
+    margin: 0;
+    padding: 24px 16px;
+    font-size: 28px;
+    text-align: center;
+  }
+  .cards__list {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
 @media (max-width: 320px) {
   .cards__title {
     font-size: 24px;
@@ -127,7 +152,6 @@
 }
 @media (max-width: 480px) {
   .cards__list {
-    all: unset;
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;

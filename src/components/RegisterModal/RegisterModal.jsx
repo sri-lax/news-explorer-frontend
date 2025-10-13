@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
@@ -19,7 +19,6 @@ function RegisterModal({
     onClose();
   };
 
-  // Optional: Reset form fields when modal closes
   useEffect(() => {
     if (!isOpen) {
       setEmail("");
@@ -41,6 +40,7 @@ function RegisterModal({
         Email
         <input
           type="email"
+          placeholder="Enter email"
           className="modal__input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -51,6 +51,7 @@ function RegisterModal({
         Password
         <input
           type="password"
+          placeholder="Enter password"
           className="modal__input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -60,6 +61,7 @@ function RegisterModal({
       <label className="modal__label">
         UserName
         <input
+          placeholder="Enter your username"
           type="text"
           className="modal__input"
           value={userName}
