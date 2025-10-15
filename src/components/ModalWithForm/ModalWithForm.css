@@ -1,14 +1,15 @@
 .modal {
   position: fixed;
-  top: -64px;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 193px;
+  bottom: 0;
   background-color: #0000004d;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  z-index: 1000;
 }
 
 .modal_opened {

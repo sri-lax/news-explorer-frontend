@@ -86,8 +86,7 @@ function App() {
   useEffect(() => {
     function handleEscape(e) {
       if (e.key === "Escape") {
-        setActiveModal("");
-        setShowRegisterSuccess(false);
+        closeActiveModal();
       }
     }
 
@@ -107,8 +106,7 @@ function App() {
         !modalRef.current.contains(e.target) &&
         (activeModal || showRegisterSuccess)
       ) {
-        setActiveModal("");
-        setShowRegisterSuccess(false);
+        closeActiveModal();
       }
     }
 
@@ -158,7 +156,12 @@ function App() {
 
   const handleAddClick = () => setActiveModal("header__signin");
   const handleRegisterClick = () => setActiveModal("register");
-  const closeActiveModal = () => setActiveModal("");
+
+  const closeActiveModal = () => {
+    setActiveModal("");
+    setShowRegisterSuccess(false);
+  };
+
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
