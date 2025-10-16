@@ -26,19 +26,17 @@ function Header({
       <div className="header__container">
         <h1 className="header__news-title">News Explorer</h1>
 
-        <div className="header__dropdown-wrapper header__show-on-mobile">
-          <button
-            className="header__user-btn"
-            onClick={toggleDropdown}
-            aria-label={isDropdownOpen ? "Close menu" : "Open menu"}
-          >
-            <img
-              src={isDropdownOpen ? closeButton : dropDown}
-              alt=""
-              className="header__arrow-icon"
-            />
-          </button>
-        </div>
+        {!isDropdownOpen && (
+          <div className="header__dropdown-wrapper header__show-on-mobile">
+            <button
+              className="header__user-btn"
+              onClick={toggleDropdown}
+              aria-label="Open menu"
+            >
+              <img src={dropDown} alt="" className="header__arrow-icon" />
+            </button>
+          </div>
+        )}
       </div>
 
       <nav className="header__user-menu" aria-label="Primary navigation">
@@ -97,6 +95,14 @@ function Header({
               className="header__dropdown-menu header__show-on-mobile"
               ref={dropdownRef}
             >
+              <button
+                className="header__dropdown-close-btn"
+                onClick={closeDropdown}
+                aria-label="Close menu"
+              >
+                <img src={closeButton} alt="Close icon" />
+              </button>
+
               <Navigation
                 currentUser={currentUser}
                 onSignOut={onSignOut}

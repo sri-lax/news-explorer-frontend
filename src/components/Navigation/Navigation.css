@@ -19,6 +19,14 @@
   color: rgba(255, 255, 255, 1);
   transition: background-color 0.3s ease;
 }
+.navigation__item-signin {
+  border: 1px solid rgba(255, 255, 255, 1);
+  width: 256px;
+  border-radius: 100px;
+  position: relative;
+  left: 9px;
+  margin: 0 auto;
+}
 
 .navigation__item:hover {
   transform: scale(1.05);

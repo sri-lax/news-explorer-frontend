@@ -198,6 +198,29 @@
   text-decoration-color: #000000 !important;
 }
 
+.header__dropdown-close-btn {
+  position: absolute;
+  top: -52px;
+  right: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 24px;
+  z-index: 1001;
+}
+
+.header__dropdown-close-btn img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.header_type_saved-news .header__dropdown-close-btn img {
+  filter: brightness(0) invert(0);
+}
+
 @media screen and (max-width: 768px) {
   .header {
     position: relative;
@@ -291,7 +314,7 @@
     max-width: 320px;
     background-color: rgba(26, 27, 34, 1);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    padding: 76px 32px 59px;
+    padding: 76px 16px 59px;
     display: flex;
     flex-direction: column;
     align-items: stretch;

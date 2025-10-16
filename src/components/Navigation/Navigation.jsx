@@ -59,7 +59,7 @@ function Navigation({
           </button>
           <button
             type="button"
-            className="navigation__item"
+            className="navigation__item navigation__item-signin"
             onClick={() => {
               closeDropdown?.();
               handleAddClick();
