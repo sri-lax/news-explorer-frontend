@@ -1,0 +1,136 @@
+.search-container {
+  width: 608px;
+  margin: 0 auto;
+}
+
+.search-title {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  height: 120px;
+  color: rgba(255, 255, 255, 1);
+  padding: 26px 9px;
+  line-height: 1.2;
+}
+.search-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  height: 24px;
+  color: rgba(255, 255, 255, 1);
+
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.search__form {
+  display: flex;
+  max-width: 608px;
+  margin: 0 auto;
+  border-radius: 100px;
+  align-items: center;
+  background-color: white;
+}
+
+.search__input {
+  flex: 1;
+  border: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  outline: none;
+  background-color: transparent;
+}
+
+.search__input::placeholder {
+  color: rgba(182, 188, 191, 1);
+}
+
+.search__input:focus {
+  outline: none;
+  border-radius: 6px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search__button {
+  width: 168px;
+  height: 64px;
+  background-color: rgba(47, 113, 229, 1);
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+.search__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 113, 229, 0.4);
+}
+
+.search__button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .search-container {
+    width: 100%;
+  }
+  .search__form {
+    position: relative;
+    top: 67px;
+    max-width: 77%;
+  }
+  .search-title {
+    font-size: 36px;
+    width: 385px;
+    height: auto;
+    padding: 41px 0;
+    margin: 0 auto;
+  }
+  .search-subtitle {
+    font-size: 18px;
+    width: 452px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 500px) {
+  .search-container {
+    padding-bottom: 80px;
+  }
+  .search-title {
+    font-size: 36px;
+    line-height: 40px;
+    width: 285px;
+    height: auto;
+    padding: 10px 9px 24px;
+  }
+  .search-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    width: 288px;
+    height: auto;
+    margin-bottom: 24px;
+    padding: 0 10px;
+  }
+  .search__form {
+    top: 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search__input {
+    font-size: 14px;
+    padding: 20px 32px;
+    width: 100%;
+  }
+  .search__button {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    height: 47px;
+    font-size: 14px;
+  }
+}

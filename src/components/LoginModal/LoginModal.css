@@ -1,0 +1,59 @@
+.modal__switch {
+  margin-top: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.modal__link {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 14px;
+  cursor: pointer;
+}
+.modal__label {
+  font-family: "inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(47, 113, 229, 1);
+}
+.modal__signup {
+  color: black;
+}
+.modal__input-error {
+  border: 1px solid red;
+  background-color: #fff0f0;
+}
+
+.modal__error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 11px;
+  display: block;
+}
+.modal__submit {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1); /* active default */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Inactive state */
+.modal__submit:disabled {
+  background-color: rgba(230, 232, 235, 1);
+  color: rgba(182, 188, 191, 1);
+  cursor: default;
+}
+
+/* Prevent hover from changing color when disabled */
+.modal__submit:disabled:hover {
+  background-color: rgba(230, 232, 235, 1);
+  color: rgba(182, 188, 191, 1);
+}

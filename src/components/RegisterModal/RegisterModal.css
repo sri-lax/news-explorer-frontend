@@ -1,0 +1,27 @@
+.modal__submit {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1); /* active */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal__submit:disabled {
+  background-color: rgba(230, 232, 235, 1);
+  color: rgba(182, 188, 191, 1);
+  cursor: default;
+}
+
+.modal__submit:disabled:hover {
+  background-color: rgba(230, 232, 235, 1);
+  color: rgba(182, 188, 191, 1);
+}
+.signin__or {
+  color: black;
+}

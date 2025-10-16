@@ -1,0 +1,399 @@
+{
+  "items": [
+    {
+      "_id": "7",
+      "title": "Everyone Needs a Special 'S",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "September 19, 2025",
+      "source": "News Explorer",
+      "id": "7"
+    },
+    {
+      "_id": "6",
+      "title": "Everyone N",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "September 19, 2025",
+      "source": "News Explorer",
+      "id": "6"
+    },
+    {
+      "_id": "9",
+      "title": " a Special 'Sit spot' in Nature",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1491147334573-44cbb4602074?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "September 19, 2025",
+      "source": "News Explorer",
+      "id": "9"
+    },
+    {
+      "_id": "5",
+      "title": "Everyone Needs a Special 'Sit spot' ",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "September 24, 2025",
+      "source": "News Explorer",
+      "id": "5"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "date": "September 24, 2025",
+      "source": "News Explorer",
+      "id": "3"
+    },
+    {
+      "_id": "5",
+      "title": "Everyone Needs a Special 'Sit spot' ",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "id": "pTWIGia_5",
+      "userId": "pTWIGia",
+      "date": "September 25, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "1",
+      "title": "Nature makes you better",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Explore the science behind nature’s impact on your brain, body, and mood.",
+      "id": "pTWIGia_1",
+      "userId": "pTWIGia",
+      "date": "September 25, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "15",
+      "title": "Lotus",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://plus.unsplash.com/premium_photo-1693719515280-5d369d80aca6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbolic significance of purity, rebirth, and spiritual awakening",
+      "id": "nBmANUF_15",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "16",
+      "title": "Tulip",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1586968295564-92fd7572718b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " cup-shaped flower that grows from a bulb and is known as a quintessential sign of spring. ",
+      "id": "nBmANUF_16",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "17",
+      "title": "sunflower ",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1540039906769-84cf3d448bc1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbol of happiness, loyalty, and positivity in various cultures.",
+      "id": "nBmANUF_17",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "10",
+      "title": " Eggs",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " This Egg Sandwich is simple, fast and delicious that everyone will love",
+      "id": "nBmANUF_10",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "12",
+      "title": "Pizza ",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "cheesy delicious,crispy crust, or hot tasty",
+      "id": "nBmANUF_12",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "9",
+      "title": "smartphone ",
+      "name": "Tech",
+      "place": "Tech",
+      "image": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "a mini-computer capable of internet browsing.",
+      "id": "nBmANUF_9",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "place": "Falls",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "id": "nBmANUF_3",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "1",
+      "title": "Nature makes you better",
+      "name": "Nature",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Explore the science behind nature’s impact on your brain, body, and mood.",
+      "id": "nBmANUF_1",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "5",
+      "title": "Everyone Needs a Special 'Sit spot' ",
+      "name": "Nature",
+      "place": "Sit spot",
+      "image": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "id": "nBmANUF_5",
+      "userId": "nBmANUF",
+      "date": "September 27, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "place": "Falls",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "id": "pw4B4rX_3",
+      "userId": "pw4B4rX",
+      "date": "October 5, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "10",
+      "title": " Eggs",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " This Egg Sandwich is simple, fast and delicious that everyone will love",
+      "id": "pw4B4rX_10",
+      "userId": "pw4B4rX",
+      "date": "October 5, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "13",
+      "title": "Pasta",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " Made from flour, water, and sometimes eggs",
+      "id": "pw4B4rX_13",
+      "userId": "pw4B4rX",
+      "date": "October 5, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "14",
+      "title": "Salad",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A salad is a dish consisting of mixed ingredients, frequently vegetables",
+      "id": "pw4B4rX_14",
+      "userId": "pw4B4rX",
+      "date": "October 5, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "15",
+      "title": "Lotus",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://plus.unsplash.com/premium_photo-1693719515280-5d369d80aca6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbolic significance of purity, rebirth, and spiritual awakening",
+      "id": "pw4B4rX_15",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "17",
+      "title": "sunflower ",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1540039906769-84cf3d448bc1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " symbol of happiness, loyalty, and positivity in various cultures.",
+      "id": "pw4B4rX_17",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "16",
+      "title": "Tulip",
+      "name": "flower",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1586968295564-92fd7572718b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " cup-shaped flower that grows from a bulb and is known as a quintessential sign of spring. ",
+      "id": "pw4B4rX_16",
+      "userId": "pw4B4rX",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "6",
+      "title": "Everyone N",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "pw4B4rX_6",
+      "userId": "pw4B4rX"
+    },
+    {
+      "_id": "6",
+      "title": "Everyone N",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Discover how spending quiet time in nature can improve mental clarity and well-being.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "demo1_6",
+      "userId": "demo1"
+    },
+    {
+      "_id": "3",
+      "title": "Multnomah Falls",
+      "name": "Nature",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "A historic trail gets a modern refresh—what it means for hikers and conservationists.",
+      "date": "October 8, 2025",
+      "source": "News Explorer",
+      "id": "demo1_3",
+      "userId": "demo1"
+    },
+    {
+      "_id": "1",
+      "title": "Nature makes you better",
+      "name": "Nature",
+      "place": "Plants",
+      "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "Explore the science behind nature’s impact on your brain, body, and mood.",
+      "id": "demo1_1",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "12",
+      "title": "Pizza ",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": "cheesy delicious,crispy crust, or hot tasty",
+      "id": "demo1_12",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    },
+    {
+      "_id": "10",
+      "title": " Eggs",
+      "name": "food",
+      "place": "Restaurant",
+      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "info": " This Egg Sandwich is simple, fast and delicious that everyone will love",
+      "id": "demo1_10",
+      "userId": "demo1",
+      "date": "October 8, 2025",
+      "source": "News Explorer"
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "email": "elise@example.com",
+      "password": "secure123",
+      "username": "Elise"
+    },
+    {
+      "email": "elise@example.com",
+      "password": "123",
+      "userName": "Elise",
+      "id": "pTWIGia"
+    },
+    {
+      "email": "syamnavami@gmail.com",
+      "password": "321",
+      "userName": "Syam",
+      "id": "nBmANUF"
+    },
+    {
+      "email": "sreeanithakrishnan@yahoo.com",
+      "password": "123",
+      "userName": "KRISHNAN",
+      "id": "I5rnTwj"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "321",
+      "userName": "ABC",
+      "id": "5JP09Pd"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "098",
+      "userName": "sdf",
+      "id": "68L24kX"
+    },
+    {
+      "email": "abc@yahoo.com",
+      "password": "234",
+      "userName": "frfrf",
+      "id": "GazrrNu"
+    },
+    {
+      "email": "elise@example.com",
+      "password": "009",
+      "userName": "abc",
+      "id": "D8-uATf"
+    },
+    {
+      "email": "sree@yahoo.com",
+      "password": "1234",
+      "userName": "sree",
+      "id": "pw4B4rX"
+    },
+    {
+      "id": "demo1",
+      "email": "reviewer@example.com",
+      "password": "123456",
+      "userName": "Reviewer"
+    }
+  ]
+}

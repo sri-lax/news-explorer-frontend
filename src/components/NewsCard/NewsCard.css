@@ -1,0 +1,100 @@
+.card {
+  flex: 0 1 calc(33.333% - 24px);
+  box-sizing: border-box;
+
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 16px;
+  transition: transform 0.2s ease;
+}
+.card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cards__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 16px;
+}
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card__info {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.card__save-btn {
+  background: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__warning {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.card__save-icon {
+  width: 14px;
+  height: 19px;
+  padding: 12px;
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.card__save-btn_saved .card__save-icon {
+  opacity: 1;
+  fill: rgba(47, 113, 229, 1);
+}
+.card__save-wrapper {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.card__save-warning {
+  top: 24px;
+  left: 149px;
+  opacity: 1;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
